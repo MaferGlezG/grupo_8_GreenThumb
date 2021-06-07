@@ -20,7 +20,11 @@ Jóvenes (20-30 años) sin distinción de género, con interés en jardinería y
 
 DESCRIPCIÓN DE LOS INTEGRANTES
 
-**MAFER GONZÁLEZ** Soy una estudiante de comunicación y medios audiovisuales, con experiencia previa en emprendimiento y experiencia limitada en programación de aplicaciones; espero brindarle a este proyecto un diseño estético pero funcional con base en las necesidades particulares del cliente.
+MAFER GONZÁLEZ: Soy una estudiante de comunicación y medios audiovisuales, con experiencia previa en emprendimiento y experiencia limitada en programación de aplicaciones; espero brindarle a este proyecto un diseño estético pero funcional con base en las necesidades particulares del cliente.
+
+ROCÍO JUÁREZ: Soy estudiante de ingeniería en tecnología y sistemas de información, con experiencia en servicio al cliente, quisiera brindarle al proyecto una experiencia de usuario intuitiva y satisfactoria.
+
+DANIEL ALARCÓN: Soy Ingeniero en Mecatrónica, ejercía como inspector metalúrgico en el sector petrolero. Tengo una maestría en ciencias de la computación y he trabajado con machine learning aplicado en medicina. Espero poder agregarle al proyecto un valor agregado único en comparación con otras páginas similares.
 
 
 SITIOS DE REFERENCIA
