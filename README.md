@@ -2,8 +2,11 @@
 
 NOMBRE DE LA PÁGINA
 
+Green Thumb
 
 DESCRIPCIÓN DE PRODUCTOS
+
+Página orientada a vender productos de plantas y relacionados con la jardinería, buscando destacarse por una oferta de productos 
 
 -Plantas para jardín/Terraza
 -Macetas y productos de decoración relativos a la jardinería
