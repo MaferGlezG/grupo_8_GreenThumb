@@ -6,7 +6,7 @@ Green Thumb
 
 DESCRIPCIÓN DE PRODUCTOS
 
-Página orientada a vender productos de plantas y relacionados con la jardinería, buscando destacarse por una oferta de productos 
+Página orientada a vender productos de plantas y relacionados con la jardinería, buscando destacarse por una oferta de productos exclusivos (plantas importadas, medicinales, aromáticas, etc.) Las categorías de productos ofrecidos incluyen: 
 
 -Plantas para jardín/Terraza
 -Macetas y productos de decoración relativos a la jardinería
@@ -15,10 +15,12 @@ Página orientada a vender productos de plantas y relacionados con la jardinerí
 
 DESCRIPCIÓN DEL PÚBLICO
 
-Jóvenes (20-30 años) con interés en jardinería y cuidado de plantas medicinalesya 
+Jóvenes (20-30 años) sin distinción de género, con interés en jardinería y cuidado de plantas, que viven en zonas urbanas donde normalmente es difícil conseguir plantas para sus hogares, y con una necesidad de soluciones innovadoras para la decoración y el mantemiento de espacios pequeños (es decir, comúnmente viven en departamentos y no en casa, pro lo que sus necesidades son distintas).
 
 
 DESCRIPCIÓN DE LOS INTEGRANTES
+
+**MAFER GONZÁLEZ** Soy una estudiante de comunicación y medios audiovisuales, con experiencia previa en emprendimiento y experiencia limitada en programación de aplicaciones; espero brindarle a este proyecto un diseño estético pero funcional con base en las necesidades particulares del cliente.
 
 
 SITIOS DE REFERENCIA
@@ -27,7 +29,7 @@ Algunos sitios que encomntramos interesantes con temática similar:
 
 *** https://tienda.grupomundoverde.mx/ ***
 
-Tienda de plantas y artículoos de jardinería.Su velocidad de carga es moderadamente rápida, su exhibición de productos es estética, intuitiva y muy funcional, en particular el botón de "mostrar de talles" integrado en cada producto.Tiene sus productos separados en una gran variedad de categorías y permite filtrar de manera muy espcífica en la búsqueda de un producto desde la barra de búsqueda.
+Tienda de plantas y artículoos de jardinería. Su velocidad de carga es moderadamente rápida, su exhibición de productos es estética, intuitiva y muy funcional, en particular el botón de "mostrar de talles" integrado en cada producto.Tiene sus productos separados en una gran variedad de categorías y permite filtrar de manera muy espcífica en la búsqueda de un producto desde la barra de búsqueda.
 
 *** https://be.green/es/c/plantas ***
 
