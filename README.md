@@ -60,3 +60,8 @@ Su visualización de producto (detalle de producto) es muy detallada y también 
 *** https://gardenencasa.es/ ***
 
 Muy estética y de carga rápida, una de sus categorías es "mascotas"; lo que amplía la oferta de productos. Formulario de registro y login están en la misma página. Productos agrupados por etiquetas, lo qu ehace fácil la navegación. Enlista los métodos de pago en el footer.
+
+WIREFRAMES: 
+
+https://wireframe.cc/pro/pp/aac39ef40448105
+https://wireframe.cc/pro/pp/36ec04065448276
