@@ -66,3 +66,6 @@ WIREFRAMES:
 https://wireframe.cc/pro/pp/aac39ef40448105
 
 https://wireframe.cc/pro/pp/36ec04065448276
+
+TRELLO:
+https://trello.com/invite/dhequipo8/deab9220ea8e11d6ca80126fb6243e9c
