@@ -1,3 +1,12 @@
+
+:root{
+    /*colores usados*/
+    --color-green: #216034;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-yellow: #FFDD47;
+    --color-blue: #156FA2;
+}
 *{
     margin: 0px;
     padding: 0px;    
