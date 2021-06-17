@@ -6,10 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>GreenThumb</title>
 </head>
 <body>
-    
+   <header>
+       <div class="header-mobile">
+           <div class="header-mobile-top-nav" >
+               <!-- aquí va el burger y los íconos-->
+           </div>
+           <div class="header-mobile-logo">
+               <img src="images/logo_completo_blanco.png" alt="Logo tienda de plantas Green Thumb" class="header-mobile-logo-img">
+           </div>
+           <div class="header-mobile-fixed-nav">
+               <nav class="header-mobile-fixed-nav-bar">
+                <ul>
+                    <li> <select name="nav-categories">
+                        <option value="Categorías"> Categorías</option>
+                        <option value="Ofertas"> Ofertas </option>
+                        <option value="Novedades"> Novedades </option>
+                    </select></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/product-Showcase">Productos</a></li>
+                    <li><a href="/product-Showcase">Best sellers</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="/product-cart">Mi carrito <i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+
+               </nav>
+           </div>
+
+       </div>
+       <div class="header-desktop">
+           <div class="header-desktop-top">
+                <div class="header-desktop-logo">
+                    <img src="images/logo_completo_blanco.png" alt="Logo tienda de plantas Green Thumb" class="header-desktop-logo-img">
+                </div>
+                <div class="header-desktop-top-search-bar">
+                    <div class="form" action="#" method="GET">
+                        <div class="input"> <input type="text" name="search bar" placeholder="¿Qué estás buscando?"> </div>
+                        <div class="submit"><button><i class="fas fa-search"></i></button></div>
+                    </div>
+                </div>
+                <div class="header-desktop-top-language-profile">
+                    <div class="header-desktop-top-language-select">
+                        <select name="nav-lanaguage">
+                            <option value="Spanish"> Español</option>
+                            <option value="English"> Inglés </option>
+                            <option value="Portuguese"> Portugués </option>
+                    </div>
+                    <div class="header-desktop-top-profile-links">
+                            <li><a href="/register">Crear cuenta</a></li>
+                            <li><a href="/register">Iniciar sesión</a></li>
+                    </div>
+                
+                </div>
+                <div class="header-desktop-top-envio">
+                    <!--aquí va el gráfico del envío-->
+
+                </div>
+            </div>
+
+            <div class="header-desktop-fixed-nav">
+                <nav class="header-mobile-fixed-nav-bar">
+                        <ul>
+                            <li> <select name="nav-categories">
+                                <option value="Categorías"> Categorías</option>
+                                <option value="Ofertas"> Ofertas </option>
+                                <option value="Novedades"> Novedades </option>
+                            </select></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/product-Showcase">Productos</a></li>
+                            <li><a href="/product-Showcase">Best sellers</a></li>
+                            <li><a href="#">Contacto</a></li>
+                            <li><a href="/product-cart">Mi carrito <i class="fas fa-shopping-cart"></i></a></li>
+                        </ul>
+                   </nav>
+            </div>
+        </div>
+
+
+   </header> 
 </body>
 </html>

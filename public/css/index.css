@@ -16,3 +16,96 @@
 body{
     font-family: 'Raleway', sans-serif;
 }
+
+.header-mobile-logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+    .header-mobile-logo-img{
+        align-self: center;
+        width: 200px;
+    }
+.header-mobile-fixed-nav{
+    background-color: var(--color-green);
+    width: 100%;
+    position: fixed;
+}
+    .header-mobile-fixed-nav-bar ul{
+    
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .header-mobile-fixed-nav-bar li{
+     width: 16%;
+    }
+    .header-mobile-fixed-nav-bar a{
+        color: var(--color-white);
+        text-decoration: none;
+    }
+header ul li{
+    list-style-type: none;
+}
+
+.header-desktop {
+    display: none;
+}
+
+@media (min-width: 361px){
+
+
+}
+
+@media (min-width: 769px){
+
+    .header-mobile{
+        display: none;
+    }
+
+    .header-desktop{
+        display: block;
+    }
+
+    .header-desktop-top{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-content: center;
+    }
+        .header-desktop-logo-img{
+            align-self: center;
+            width: 300px;
+        }
+
+        .header-desktop-top-profile-links{
+            color: var(--color-black);
+            text-decoration: none;
+        }
+    .header-desktop-fixed-nav{
+        background-color: var(--color-green);
+        width: 100%;
+        position: fixed;
+    }
+        .header-desktop-fixed-nav-bar ul{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+            .header-desktop-fixed-nav-bar li{
+             width: 16%;
+            }
+            .header-desktop-fixed-nav-bar a{
+                color: var(--color-white);
+                text-decoration: none;
+            }
+        header ul li{
+            list-style-type: none;
+        }
+
+    
+
+}
