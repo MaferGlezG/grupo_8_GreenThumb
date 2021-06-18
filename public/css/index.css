@@ -53,6 +53,29 @@ header ul li{
 .header-desktop {
     display: none;
 }
+.carousel-img{
+    height: 100px;
+}
+.main-showcase{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+    .main-showcase-producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    }
+
+    .product-img{
+        width: 150px;
+    }
+
+    .main-article-nombre{
+        font-size: 35px;
+    }
 
 @media (min-width: 361px){
 
