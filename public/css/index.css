@@ -5,6 +5,7 @@
     --color-black: #000000;
     --color-yellow: #FFDD47;
     --color-blue: #156FA2;
+    --color-grey: #666;
 }
 
 *{
@@ -17,99 +18,195 @@ body{
     font-family: 'Raleway', sans-serif;
 }
 
-.header-mobile-logo{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+p {
+    font-weight: 600;
 }
 
-    .header-mobile-logo-img{
-        align-self: center;
-        width: 200px;
-    }
-.header-mobile-fixed-nav{
-    background-color: var(--color-green);
-    width: 100%;
-    position: fixed;
+h1{
+    font-weight: 800;
 }
-    .header-mobile-fixed-nav-bar ul{
-    
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    .header-mobile-fixed-nav-bar li{
-     width: 16%;
-    }
-    .header-mobile-fixed-nav-bar a{
-        color: var(--color-white);
-        text-decoration: none;
-    }
+
+h4{
+    font-weight: 700;
+    font-size: 20px;
+}
 header ul li{
     list-style-type: none;
 }
 
-.header-desktop {
-    display: none;
+.header-mobile-fixed-nav{
+    background-color: var(--color-green);
+    z-index: 10;
+    width: 100%;
+    height: 40px;
 }
-.carousel-img{
-    height: 100px;
-}
-.main-showcase{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-}
-
-    .main-showcase-producto{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    }
-
-    .product-img{
-        width: 150px;
-    }
-
-    .main-article-nombre{
-        font-size: 35px;
-    }
-
-@media (min-width: 361px){
-
-
-}
-
-@media (min-width: 769px){
-
-    .header-mobile{
-        display: none;
-    }
-
-    .header-desktop{
-        display: block;
-    }
-
-    .header-desktop-top{
+    .header-mobile-fixed-nav-bar ul{
         display: flex;
         flex-direction: row;
-        justify-content: start;
+        justify-content: flex-end;
         align-content: center;
+        
     }
-        .header-desktop-logo-img{
-            align-self: center;
-            width: 300px;
-        }
-
-        .header-desktop-top-profile-links{
-            color: var(--color-black);
+        .header-mobile-fixed-nav-bar a{
+            color: var(--color-white);
             text-decoration: none;
         }
 
 
+        .header-mobile-fixed-nav-bar i{
+            width: 40px;
+            position: relative;
+            top: 10px;
+         }
+         .burger-menu-item{
+             justify-self: flex-start;
+        }
+           .header-mobile-burger-menu i{
+                background-color: var(--color-green);
+                border-radius: 3px;
+                color: #FFF;
+                font-size: 10px;
+                height: 20px;
+                margin: 5px 0px 10px 0px;
+                padding: 5px;
+                width: 20px;
+            }
+
+    .header-mobile-logo{
+       display: flex;
+       justify-content: center;
+    }
+
+    .header-mobile-logo-img{
+        width: 200px;
+    }
+    
+.header-desktop {
+    display: none;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50px;
+}
+
+    .main-showcase-copy{
+        padding: 30px;;
+    }
+    .main-showcase{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative;
+        top: 20px;
+        flex-wrap: wrap;
+    }
+        .main-showcase-producto{
+            margin: 10px 0px;
+            min-width: 20%;
+            max-width: 30%;
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        .main-showcase-producto a{
+            color: var(--color-black);
+            text-decoration: none;
+
+        }
+
+        .main-showcase-producto:hover{
+            box-shadow: 0px 0px 10px rgb(100, 100, 100);
+
+        }
+            .product-img{
+                max-width: 150px;
+                max-height: 150px;
+                padding: 10px;
+            }
+
+            .main-article{
+                align-self: center;
+            }
+
+            .flickity-viewport{
+                width: 100%;
+            }
+
+            .main-carousel-banner{
+                padding: 15px;
+            }
+
+                .main-carousel-banner img{
+                    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+                }
+                .footer{
+                    background-color: var(--color-green);
+                    color: white;
+                    position: relative;
+                    top: 50px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+                }
+                
+                footer ul li{
+                    list-style-type: none;
+                }
+                
+                footer p{
+                    font-size: 12px;
+                }
+                
+                footer h5{
+                    font-size: 15px;
+                }
+                
+                    .footer-info{
+                        display: flex;
+                        flex-direction: column;
+                        padding: 10px;
+                        align-content: center;
+                        width: 15%;
+                    }
+                
+                    .footer-info a{
+                        color: var(--color-white);
+                        text-decoration: none;
+                    }
+                
+
+                        .footer-consult-item{
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .newsletter-send{
+                            display: flex;
+                            flex-direction: row;
+                        }
+                        .footer-icons{
+                            display: flex;
+                            flex-direction: row;
+                            width: 30%;
+                        }
+                
+                            .footer-icons-item i{
+                                font-size: 30px;
+                                padding: 5px;
+                            }
 
     
+    @media (min-width: 361px){
 
-}
+
+    }
+    
+    @media (min-width: 769px){
+
+
+    }
+
