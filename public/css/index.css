@@ -84,6 +84,24 @@ header ul li{
 .header-desktop {
     display: none;
 }
+    .header-desktop-top{
+        display: flex;
+        flex-direction: row;
+    }
+        .header-desktop-logo img{
+            width: 250px;
+        }
+
+.header-desktop-fixed-nav{
+display: none;
+}
+
+.header-fixed-nav{
+    background-color: var(--color-green);
+    z-index: 10;
+    width: 100%;
+    height: 40px;
+}
 
 main{
     display: flex;
@@ -206,7 +224,6 @@ main{
     }
     
     @media (min-width: 769px){
-
 
     }
 
