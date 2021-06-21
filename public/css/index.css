@@ -108,6 +108,7 @@ main{
     flex-direction: column;
     position: relative;
     top: 50px;
+    padding-bottom: 20px;
 }
 
     .main-showcase-copy{
@@ -155,11 +156,13 @@ main{
             }
 
             .main-carousel-banner{
-                padding: 15px;
+                padding-left: 200px;
+                padding-right: 100px;
             }
 
                 .main-carousel-banner img{
                     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+
                 }
                 .footer{
                     background-color: var(--color-green);
