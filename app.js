@@ -24,5 +24,5 @@ app.get('/product-Showcase', (req,res)=>{
 });
 
 app.get('/register', (req,res)=>{
-    res.sendFile(__dirname + '/views/register-login.html');
+    res.sendFile(__dirname + '/views/register.html');
 });
