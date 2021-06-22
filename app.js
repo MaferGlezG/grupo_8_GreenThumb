@@ -23,6 +23,6 @@ app.get('/product-Showcase', (req,res)=>{
     res.sendFile(__dirname + '/views/productShowcase.html');
 });
 
-app.get('/register', (req,res)=>{
-    res.sendFile(__dirname + '/views/register-login.html');
+app.get('/register-login', (req,res)=>{
+    res.sendFile(__dirname + '/views/register.html');
 });
