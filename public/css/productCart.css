@@ -89,9 +89,139 @@ display: none;
     height: 40px;
 }
 
+.main-title{
+    display: flex;
+    justify-content: center;
+}
 
+.main-categories{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px black solid;
+    justify-content: space-around;
+    padding: 10px;
+}
 
+.main-products{
+    display: flex;
+    flex-direction: column;
+}
+    .main-products-in-cart-item{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 25px;
+    }
+        .main-products-in-cart-item p{
+            position: relative;
+            left: -100px;
+            font-size: 25px;
+        }
 
+        .main-article-nombre{
+            position: relative;
+            left: -75px;
+            font-size: 35px;
+        }
+
+        .item-img{
+            padding-left: 20px;
+        }
+
+            .product-img{
+                width: 150px;
+            }
+
+            .item-delete{
+                color: black;
+                text-decoration: none;
+                position: relative;
+                z-index: 10;
+                top: -140px;
+                left: -15px;
+                font-size:  20px;
+            }
+
+.main-actions{
+    display: flex;
+    flex-direction: row;
+}
+    .coupon-holder form{
+        display: flex;
+        flex-direction: row;
+    }
+
+        .main-actions-coupon input, .main-actions-coupon button{
+        appearance: none;
+        background-color: transparent;
+        border: none;
+        padding: 5px;
+        margin: 0;
+        width: 100%;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: inherit;
+        line-height: inherit;
+        color:black;
+        text-align: center;
+
+        }
+    .coupon-holder button{
+        appearance: none;
+        background-color: var(--color-blue);
+        border: none;
+        padding: 5px;
+        margin: 0;
+        width: 100%;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: inherit;
+        line-height: inherit;
+        color:black;
+        text-align: center;
+        position: relative;
+        right: -50px;
+    }
+
+    .holder-holder{
+        border-radius:45px;
+        display:inline-block;
+        overflow:hidden;
+        background: var(--color-blue);
+        border:1px solid #cccccc;
+        margin-top: 20px;
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    position: relative;
+right: 30px;
+top: -20px;}
+
+        .coupon-send{
+            position: relative;
+            right: -0px;
+        }
+
+    .main-actions-coupon{
+        width: 50%;
+    }
+
+    .main-actions-coupon input, .main-actions-coupon button{
+        height: 55px;
+
+    }
+
+    .main-actions-coupon button{
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .main-actions-buy{
+        width: 50%;
+        position: relative;
+        right: -400px;
+    }
 
 
 
