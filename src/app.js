@@ -8,9 +8,9 @@ const path = require('path');
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use('/', rutasMain);
-app.use('/register', rutasUsuario)
+app.use('/user', rutasUsuario)
 app.set('views', path.join(__dirname, 'views'));
-//app.use('/product', rutasProducto);
+app.use('/product', rutasProducto);
 
 
 
