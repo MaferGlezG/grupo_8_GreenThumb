@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="http://localhost:3333/css/index.css">
+<title>GreenThumb</title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <main>
+        <div class="main-carousel">
+            <div class="main-gallery js-flickity"
+            data-flickity-options='{ "cellAlign": "left", "contain": true, "freeScroll": true, "wrapAround": true}'>
+                <div class="main-carousel-banner">
+                            <img src="images/banner1.png" height="400" width="800" alt="Envíos nacionales">
+                </div>
+                <div class="main-carousel-banner">
+                            <img src="images/banner2.png" height="400" width="800" alt="Plantas decorativas">
+                    </div> 
+                    <div class="main-carousel-banner">
+                       <a href="/product"> <img src="images/banner3.png" height="400" width="800" alt="Cactus"></a>
+                </div>
+            </div>
+        </div>            
+        <div class="main-showcase-copy">
+                <h1>Lo más popular</h1>
+            </div>
+        <div class="main-showcase">
+
+            <article class="main-showcase-producto">
+                <a href="/product/view/1">
+                <img src="images/main-productos-planta1.png" alt="planta 1" class="product-img">
+                <div class="main-article">
+                    <a href="/product/cart" class="main-showcase-carrito"><i class="fas fa-cart-plus"></i></a>
+                    <h4 class="main-article-nombre">Planta</h4>
+                    <p class="main-article-precio">$230.000</p>
+                    <p class="main-article-descuento">20% off</p>
+                    <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </a> 
+            </article>
+
+            <article class="main-showcase-producto">
+                <a href="/product/view/1">
+                <img src="images/main-productos-planta2.png" alt="planta 2" class="product-img">
+                <div class="main-article">
+                    <a href="/product/cart"><i class="fas fa-cart-plus"></i></a>
+                    <h4 class="main-article-nombre">Planta</h4>
+                    <p class="main-article-precio">$230.000</p>
+                    <p class="main-article-descuento">20% off</p>
+                    <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </a>
+            </article>
+            <article class="main-showcase-producto">
+                <a href="/product/view/1">  
+                <img src="images/main-productos-planta3.png" alt="planta 3" class="product-img">
+                <div class="main-article">
+                    <a href="/product/cart"><i class="fas fa-cart-plus"></i></a>
+                    <h4 class="main-article-nombre">Planta</h4>
+                    <p class="main-article-precio">$230.000</p>
+                    <p class="main-article-descuento">20% off</p>
+                    <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                </a> 
+            </article>
+            <article class="main-showcase-producto">
+                <a href="/product/view/1">    
+                <img src="images/main-productos-planta4.png" alt="planta 4" class="product-img">
+                <div class="main-article">
+                    <a href="/product/cart"><i class="fas fa-cart-plus"></i></a>
+                    <h4 class="main-article-nombre">Planta</h4>
+                    <p class="main-article-precio">$230.000</p>
+                    <p class="main-article-descuento">20% off</p>
+                    <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                </a>
+            </article>
+            <article class="main-showcase-producto">
+                <a href="/product/view/1">    
+                <img src="images/aloe5.png" alt="planta 4" class="product-img">
+                <div class="main-article">
+                    <a href="/product/cart"><i class="fas fa-cart-plus"></i></a>
+                    <h4 class="main-article-nombre">Aloe Vera</h4>
+                    <p class="main-article-precio">$230.000</p>
+                    <p class="main-article-descuento">20% off</p>
+                    <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                </a>
+            </article>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>
