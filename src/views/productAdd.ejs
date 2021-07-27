@@ -8,7 +8,62 @@
 <body>
     <%- include('./partials/header') %>
     <main>
-        
+        <div class="contenedor">
+            <section>
+                <div class="columns is-centered">
+                    <div class="column is-6">
+                        <h1>Crea tu producto</h1>
+                        <form action="/product" method="POST" enctype="multipart/form-data">
+
+                            <div class="field">
+                                <label for = "name">Nombre del producto</label>
+                                <div class="control">
+                                    <input type="text" name="name" id="name">
+                                </div>
+                                <p class="feedback"></p>
+                            </div>
+
+                            <div class="field">
+                                <label for = "name">Descripción del producto</label>
+                                <div class="control">
+                                    <textarea name="descripción"></textarea>
+                                </div>
+                                <p class="feedback"></p>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Imagen del producto</label>
+                                <input class="form-control" type="file" name = "formFile" id="formFile">
+                            </div>
+
+                            <label for="exampleColorInput" class="form-label">Color del producto</label>
+                            <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+
+                            <select class="form-label" aria-label="Default select example">
+                                <option selected>Categoría del producto</option>
+                                <option value="1">Categoría 1</option>
+                                <option value="2">Categoría 2</option>
+                                <option value="3">Categoría 3</option>
+                            </select>
+
+                            <select class="form-label" aria-label="Default select example">
+                                <option selected>Tamaño del producto</option>
+                                <option value="1">Tamaño 1</option>
+                                <option value="2">Tamaño 2</option>
+                                <option value="3">Tamaño 3</option>
+                            </select>
+
+                            <div class="field">
+                                <div class="control">
+                                    <button type="submit">crear producto</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
     <%- include('./partials/footer') %>
 </body>

@@ -29,9 +29,12 @@ let productController = {
     },
     destroy: (req, res) => {
         res.render('productAdd');
-    }
-    
-    */
+    },
+
+    //crear : (req, res) => {
+        //res.render('creado');
+    //},*/
+
 }
 
 module.exports = productController;
