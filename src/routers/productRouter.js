@@ -7,7 +7,7 @@ const productController = require('../controllers/productController');
 
 const storage = multer.diskStorage({
     destination: (req, file, next) => {
-        next(null, path.join(__dirname, '../public/images/groups'))
+        next(null, path.join('localhost:333/public/images'))
     },
 
     filename: (req, file, next) => {
@@ -22,9 +22,9 @@ const upload = multer({ storage });
 
 //Listado de productos (product showcase)
 router.get('/', productController.showcase);
-router.get('/', productController.showcase);
-//router.post('/', productController.showcase);
-//router.post('/crear' ,productController.crear);
-router.post('/add', upload.single('"formFile"'), productController.add);
+
+//Añadir un producto
+router.get('/add', productController.add);
+router.post('/add', upload.single('"formFile"'), productController.store);
 
 module.exports = router;
