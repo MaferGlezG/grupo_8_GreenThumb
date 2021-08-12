@@ -321,61 +321,7 @@ display: none;
     color: var(--color-yellow);
     opacity: 100%;
 }
-.footer{
-    background-color: var(--color-green);
-    color: white;
-    position: relative;
-    top: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
 
-footer ul li{
-    list-style-type: none;
-}
-
-footer p{
-    font-size: 12px;
-}
-
-footer h5{
-    font-size: 15px;
-}
-
-    .footer-info{
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        align-content: center;
-        width: 15%;
-    }
-
-    .footer-info a{
-        color: var(--color-white);
-        text-decoration: none;
-    }
-
-
-        .footer-consult-item{
-            display: flex;
-            flex-direction: column;
-        }
-        .newsletter-send{
-            display: flex;
-            flex-direction: row;
-        }
-        .footer-icons{
-            display: flex;
-            flex-direction: row;
-            width: 30%;
-        }
-
-            .footer-icons-item i{
-                font-size: 30px;
-                padding: 5px;
-            }
 
 
 @media (min-width: 361px){
