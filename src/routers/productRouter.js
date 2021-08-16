@@ -27,4 +27,18 @@ router.get('/', productController.showcase);
 router.get('/add', productController.add);
 router.post('/add', upload.single('"formFile"'), productController.store);
 
+//Vista de carrito
+router.get('/cart', productController.cart);
+
+//Vista de detalle
+router.get('/:id/view', productController.detail)
+
+//editar un producto
+router.get('/:id/edit', productController.edit)
+router.post('/:id/edit', productController.update)
+
+//eliminar un producto
+router.get('/:id/delete', productController.delete)
+router.delete('/:id/delete', productController.destroy)
+
 module.exports = router;

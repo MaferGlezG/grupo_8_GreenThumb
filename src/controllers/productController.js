@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { v4: newId } = require('uuid');
 newId();
+const db = require('../data/products.json')
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -48,18 +49,32 @@ let productController = {
 
 
     },
-    /*
-        edit: (req, res) => {
-            res.render('productAdd');
-        },
-    
-        update: (req, res) => {
-            res.render('productAdd');
-        },
-        destroy: (req, res) => {
-            res.render('productAdd');
-        },
-    */
+
+    edit: (req, res) => {
+        let productId = req.params.id;
+        let productToEdit = db[productId]
+        res.render('productEdit', { productToEdit: productToEdit });
+    },
+
+    update: (req, res) => {
+        let productId = req.params.id;
+        if (db[req.params.id].id = req.params.id) {
+            db[productId].name = req.body.name;
+            db[productId].description = req.body.description;
+            db[productId].color = req.body.color;
+            db[productId].price = req.body.price;
+            db[productId].category = req.body.category;
+            db[productId].size = req.body.size;
+        }
+        res.redirect('/:id/view')
+    },
+    delete: (req, res) => {
+        res.render('productAdd');
+    },
+    destroy: (req, res) => {
+        res.render('productAdd');
+    },
+
 
 }
 

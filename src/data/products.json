@@ -459,7 +459,7 @@
     "size": "M"
   },
   {
-    "id": "5bb8a2f4-9814-4363-9bd5-5e9ce077bf9e",
+    "id": 51,
     "name": "Una prueba",
     "description": "Descripción",
     "image": "aroma-906137.jpg",
@@ -469,11 +469,21 @@
     "size": "2"
   },
   {
-    "id": "e42e5155-5648-4285-ab43-1f775affa941",
+    "id": 52,
     "name": "Una prueba",
     "description": "Descripción",
     "image": "close-up-1854245.jpg",
     "color": "#65ca49",
+    "price": "5555",
+    "category": "1",
+    "size": "1"
+  },
+  {
+    "id": 53,
+    "name": "Una prueba",
+    "description": "desc prueba",
+    "image": "61S7Yjf1g+L._AC_SL1500_.jpg",
+    "color": "#563d7c",
     "price": "5555",
     "category": "1",
     "size": "1"
