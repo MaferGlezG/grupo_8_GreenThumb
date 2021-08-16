@@ -15,3 +15,61 @@
   
 5. *Dejar de hacer?*
   No informar al equipo de conflictos de horario o problemas en el código con suficiente anticipación.
+  
+  
+  *********************************************************************************************************
+  **DESPUÉS DEL SEGUNDO SPRINT, ¿QUÉ TENEMOS QUE...**
+
+*********************************************************************
+1. *Comenzar a hacer?*
+    Tener una estrategia para la división de trabajo, ya que actualmente está muy disparejo.
+    
+2. *Hacer más?*
+  Comenzar los trabajos con anticipación y comunicarnos como equipo.
+  
+3. *Continuar haciendo?*
+   Aplicar nuestro conocimiento y buscar soluciones a los problemas que nos encontramos.
+  
+4. *Hacer menos?*
+  Dejar pasar las fechas de entrega.
+  
+5. *Dejar de hacer?*
+  Nombrar archivos de manera poco intuitiva.
+  
+  *********************************************************************************************************
+  **DESPUÉS DEL TERCER SPRINT, ¿QUÉ TENEMOS QUE...**
+
+*********************************************************************
+1. *Comenzar a hacer?*
+    Esta vez nos dividimos mejor el trabajo pero nos hace falta establecer fechas internas para las entregas.
+    
+2. *Hacer más?*
+  Repartir el trabajo equitativamente.
+  
+3. *Continuar haciendo?*
+   Dividirnos el trabajo al inicio del sprint.
+  
+4. *Hacer menos?*
+  Dejar actividades para el siguiente sprint.
+  
+5. *Dejar de hacer?*
+  Trabajar de manera desorganizada.
+  
+  *********************************************************************************************************
+  **DESPUÉS DEL CUARTO SPRINT, ¿QUÉ TENEMOS QUE...**
+
+*********************************************************************
+1. *Comenzar a hacer?*
+    Establecer mejor nuestras fechas, este es el sprint en el que más nos hemos retrasado y seguramente nos traerá problemas.
+    
+2. *Hacer más?*
+  Tomar invertario del trabajo que tenemos atrasado para recueperarlo.
+  
+3. *Continuar haciendo?*
+   Comunicarnos como equipo.
+  
+4. *Hacer menos?*
+  Trabajar solo durante las clases o cuando podemos reunirnos.
+  
+5. *Dejar de hacer?*
+  Dejar trabajos atrasados.
