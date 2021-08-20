@@ -7,6 +7,8 @@ const rutasProducto = require('./routers/productRouter');
 const path = require('path');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const session = require('express-session');
+
 
 //EXPRESS()
 
@@ -16,6 +18,7 @@ const app = express();
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
+app.use(session({ secret: 'Secret' }));
 
 //TEMPLATE ENGINE
 app.set('views', path.join(__dirname, 'views'));

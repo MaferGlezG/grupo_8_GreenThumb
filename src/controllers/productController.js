@@ -11,18 +11,18 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 let productController = {
     detail: (req, res) => {
-        res.render('productDetail');
+        res.render('products/productDetail');
     },
 
     cart: (req, res) => {
-        res.render('productCart');
+        res.render('products/productCart');
     },
     showcase: (req, res) => {
-        res.render('productShowcase');
+        res.render('products/productShowcase');
     },
     //Formato de creación de producto
     add: (req, res) => {
-        res.render('productAdd');
+        res.render('products/productAdd');
     },
 
 
@@ -57,22 +57,23 @@ let productController = {
     },
 
     update: (req, res) => {
-        let productId = req.params.id;
-        if (db[req.params.id].id = req.params.id) {
-            db[productId].name = req.body.name;
-            db[productId].description = req.body.description;
-            db[productId].color = req.body.color;
-            db[productId].price = req.body.price;
-            db[productId].category = req.body.category;
-            db[productId].size = req.body.size;
+        if (db[req.params.id].id == req.params.id) {
+            db[req.params.id].name = req.body.name;
+            db[req.params.id].description = req.body.description;
+            db[req.params.id].color = req.body.color;
+            db[req.params.id].price = req.body.price;
+            db[req.params.id].category = req.body.category;
+            db[req.params.id].size = req.body.size;
         }
         res.redirect('/:id/view')
     },
     delete: (req, res) => {
-        res.render('productAdd');
+        res.render('productDelete');
     },
     destroy: (req, res) => {
-        res.render('productAdd');
+        if (db[req.params.id].id == req.params.id) {
+            db[req.params.id].delete
+        };
     },
 
 

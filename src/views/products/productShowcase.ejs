@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+        <link rel="stylesheet" href="css/productShowcase.css">
+        <title>Browse - GreenThumb</title>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <main class="container">
+            <div class="sortBy">
+                <label for="sortBy">Ordenar por: </label>
+                <select name="order" id="order">
+                    <option value="minPrice">Menor precio</option>
+                    <option value="maxPrice">Mayor precio</option>
+                    <option value="a-z">Nombre</option>
+                </select>
+            </div>
+            <div class="filters">
+                <ul>
+                    <h2>Filtrar</h2>
+                    <i class="fas fa-filter"></i>
+                    <li class="filter">
+                        <h3 class="categories">Categoría</h3><br>
+                        <input type="checkbox" name="category" value="cat1"><label for="cat1" checked>Lorem
+                            ipsum</label><br>
+                        <input type="checkbox" name="category" value="cat2"><label for="cat2">Lorem ipsum</label><br>
+                        <input type="checkbox" name="category" value="cat3"><label for="cat3">Lorem ipsum</label><br>
+                    </li>
+                    <li class="filter">
+                        <h3 class="sizes">Tamaño</h3><br>
+                        <input type="checkbox" name="size" value="size1"><label for="size1" checked>Lorem
+                            ipsum</label><br>
+                        <input type="checkbox" name="size" value="size2"><label for="size2">Lorem ipsum</label><br>
+                        <input type="checkbox" name="size" value="size3"><label for="size3">Lorem ipsum</label><br>
+                    </li>
+                </ul>
+            </div>
+            <div class="products">
+                <article class="showcase-product">
+                    <img src="images/products/main-productos-planta1.png" alt="planta 1" class="product-img">
+                    <div class="article">
+                        <a href="/product-cart" class="main-showcase-carrito"><i class="fas fa-cart-plus"></i></a>
+                        <h4 class="main-article-nombre">Planta</h4>
+                        <p class="main-article-precio">$230.000</p>
+                        <p class="main-article-descuento">20% off</p>
+                        <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </article>
+                <article class="showcase-product">
+                    <img src="images/products/main-productos-planta2.png" alt="planta 2" class="product-img">
+                    <div class="article">
+                        <a href="/product-cart"><i class="fas fa-cart-plus"></i></a>
+                        <h4 class="main-article-nombre">Planta</h4>
+                        <p class="main-article-precio">$230.000</p>
+                        <p class="main-article-descuento">20% off</p>
+                        <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </article>
+                <article class="showcase-product">
+                    <img src="images/products/main-productos-planta3.png" alt="planta 3" class="product-img">
+                    <div class="article">
+                        <a href="/product-cart"><i class="fas fa-cart-plus"></i></a>
+                        <h4 class="main-article-nombre">Planta</h4>
+                        <p class="main-article-precio">$230.000</p>
+                        <p class="main-article-descuento">20% off</p>
+                        <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </article>
+                <article class="showcase-product">
+                    <img src="images/products/main-productos-planta4.png" alt="planta 4" class="product-img">
+                    <div class="article">
+                        <a href="/product-cart"><i class="fas fa-cart-plus"></i></a>
+                        <h4 class="main-article-nombre">Planta</h4>
+                        <p class="main-article-precio">$230.000</p>
+                        <p class="main-article-descuento">20% off</p>
+                        <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <%- include('../partials/footer') %>
+</body>
+
+</html>

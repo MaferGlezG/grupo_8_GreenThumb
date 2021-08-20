@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+        <link rel="stylesheet" href="http://localhost:3333/css/productDetail.css">
+        <title>Producto - GreenThumb</title>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <main>
+            <div class="main-product">
+                <div class="main-product-rec">
+                    <!--Productos recomendados-->
+                    <h2>Productos Recomendados</h2>
+                    <ul class="productos-recomendados">
+                        <li class="productos-recomendados-item">
+                            <img src="http://localhost:3333/images/products/main-productos-planta1.png" alt="planta 1">
+                            <i class="fas fa-cart-plus"></i>
+                            <h3>Nombre del producto</h3>
+                            <h2>$XX-$XXX</h2>
+                        </li>
+                        <li class="productos-recomendados-item">
+                            <img src="http://localhost:3333/images/products/main-productos-planta2.png" alt="planta 2">
+                            <i class="fas fa-cart-plus"></i>
+                            <h3>Nombre del producto</h3>
+                            <h2>$XX-$XXX</h2>
+                        </li>
+                        <li class="productos-recomendados-item">
+                            <img src="http://localhost:3333/images/products/main-productos-planta4.png" alt="planta 3">
+                            <i class="fas fa-cart-plus"></i>
+                            <h3>Nombre del producto</h3>
+                            <h2>$XX-$XXX</h2>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="main-product-pic">
+                    <!--Imagen y carrusel-->
+                    <div class="gallery gallery-a js-flickity"
+                        data-flickity-options='{ "wrapAround": true, "freeScroll": true, "fullscreen" : true, "pageDots" : false }'>
+                        <div class="main-carousel-banner">
+                            <img src="http://localhost:3333/images/products/aloe1.png" height="600" width="600"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-banner">
+                            <img src="http://localhost:3333/images/products/aloe2.png" height="600" width="600"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-banner">
+                            <img src="http://localhost:3333/images/products/aloe3.png" height="600" width="600"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-banner">
+                            <img src="http://localhost:3333/images/products/aloe4.png" height="600" width="600"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-banner">
+                            <img src="http://localhost:3333/images/products/aloe5.png" height="600" width="600"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-banner">
+                            <img src="http://localhost:3333/images/products/aloe6.png" height="600" width="600"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-banner">
+                            <img src="http://localhost:3333/images/products/aloe7.png" height="600" width="600"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-banner">
+                            <img src="http://localhost:3333/images/products/aloe8.png" height="600" width="600"
+                                alt="Aloe Vera">
+                        </div>
+                    </div>
+                    <div class="gallery gallery-b js-flickity"
+                        data-flickity-options='{ "asNavFor": ".gallery-a", "wrapAround": true, "freeScroll": true }'>
+                        <div class="main-carousel-nav">
+                            <img src="http://localhost:3333/images/products/aloe1.png" height="100" width="100"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-nav">
+                            <img src="http://localhost:3333/images/products/aloe2.png" height="100" width="100"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-nav">
+                            <img src="http://localhost:3333/images/products/aloe3.png" height="100" width="100"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-nav">
+                            <img src="http://localhost:3333/images/products/aloe4.png" height="100" width="100"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-nav">
+                            <img src="http://localhost:3333/images/products/aloe5.png" height="100" width="100"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-nav">
+                            <img src="http://localhost:3333/images/products/aloe6.png" height="100" width="100"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-nav">
+                            <img src="http://localhost:3333/images/products/aloe7.png" height="100" width="100"
+                                alt="Aloe Vera">
+                        </div>
+                        <div class="main-carousel-nav">
+                            <img src="http://localhost:3333/images/products/aloe8.png" height="100" width="100"
+                                alt="Aloe Vera">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="main-product-info">
+                    <!--Información del producto-->
+                    <h1>Aloe Vera</h1>
+                    <h3>Disponibles: XXX</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus suscipit molestias ducimus.
+                        Officiis numquam eaque fugit distinctio repellendus tempora dolore tempore perferendis corrupti,
+                        voluptas enim alias sapiente, aliquid laboriosam maxime!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ea illo, provident dolorum ab
+                        pariatur modi nemo? Facilis architecto unde atque quibusdam ducimus, eum consequuntur labore,
+                        debitis voluptate vero magnam.</p>
+                    <h2>$XX-$XXX</h2>
+                    <div class="label-and-select">
+                        <label for="size-select">
+                            <h2>Tamaño</h2>
+                        </label>
+                        <div class="main-product-info-select-size" id="size-select">
+                            <select class="select-size-box">
+                                <option>Elige un Tamaño</option>
+                                <option>Semillero</option>
+                                <option>Brote</option>
+                                <option>Miniatura</option>
+                                <option>Grande</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="label-and-select">
+                        <label for="color-select">
+                            <h2>Color</h2>
+                        </label>
+                        <div class="main-product-info-select-color" id="color-select">
+                            <select class="select-color-box">
+                                <option>Elige un Color</option>
+                                <option>Maceta blanca</option>
+                                <option>Maceta azul</option>
+                                <option>Sin Maceta</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="carrito-button-holder">
+                        <a href="/product/cart">
+                            <button class="carrito-button">
+                                <h1>Agregar al carrito <i class="fas fa-cart-plus"></i></h1>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="main-reviews">
+                <h1>Reseñas <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></h1>
+                <div class="main-reviews-left">
+                    <article class="main-reviews-left-item">
+                        <h2>Lorem ipsum</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio provident aliquid officiis
+                            itaque, temporibus accusamus nostrum unde cum voluptatibus, nulla consequuntur! Ut nam hic
+                            id iste veniam aliquam, est perferendis.</p>
+                        <h3><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="far fa-star"></i></h3>
+                    </article>
+                    <article class="main-reviews-left-item">
+                        <h2>Lorem ipsum</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio provident aliquid officiis
+                            itaque, temporibus accusamus nostrum unde cum voluptatibus, nulla consequuntur! Ut nam hic
+                            id iste veniam aliquam, est perferendis.</p>
+                        <h3><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i></h3>
+                    </article>
+                </div>
+                <div class="main-leave-review">
+                    <h1>Dejar una reseña</h1>
+                    <div class="review-stars">
+                        <h3><i class="fas fa-star"></i> </h3>
+                        <h3><i class="fas fa-star"></i> </h3>
+                        <h3><i class="fas fa-star"></i> </h3>
+                        <h3><i class="fas fa-star"></i> </h3>
+                        <h3><i class="fas fa-star"></i> </h3>
+                    </div>
+                    <div>
+                        <input type="text">
+                    </div>
+                    <div class="review-button-holder">
+                        <button class="review-button">
+                            <h2>Enviar reseña </h2>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <%- include('../partials/footer') %>
+
+</body>
+
+</html>

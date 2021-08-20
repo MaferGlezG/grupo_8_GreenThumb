@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+        <link rel="stylesheet" href="http://localhost:3333/css/register.css">
+        <title>Usuario - GreenThumb</title>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <main>
+            <!-- Formularios -->
+            <div class="forms-container">
+                <!-- Links de los formularios -->
+                <ul class="container-tabs">
+                    <li class="login-tab"><a href="#login">Iniciar Sesión</a></li>
+                    <li class="signUp-tab"><a href="#signUp">Registrarse</a></li>
+                </ul>
+                <!-- Contenido de los Formularios -->
+                <div class="tab-contain">
+                    <!-- Iniciar Sesion -->
+                    <div id="login">
+                        <h1>Iniciar Sesión</h1>
+                        <form action="/register" method="GET">
+                            <div class="input-container">
+                                <label>
+                                    Usuario <span class="req">*</span>
+                                </label>
+                                <input type="text" name="username" required>
+                            </div>
+
+                            <div class="input-container">
+                                <label>
+                                    Contraseña <span class="req">*</span>
+                                </label>
+                                <input type="password" name="password" required>
+                            </div>
+                            <div id="remember-container">
+                                <input type="checkbox" id="checkbox-2-1" class="checkbox" checked="checked" />
+                                <span id="remember">Recordarme</span>
+                            </div>
+                            <p class="forgot"><a href="#">¿Olvidaste la contraseña?</a></p>
+                            <input type="submit" class="button button-block" value="Iniciar Sesión">
+                        </form>
+                    </div>
+
+                    <!-- Registrarse -->
+                    <div id="signUp">
+                        <h1>Registrarse</h1>
+                        <form action="/register" method="GET">
+                            <div class="top-row">
+                                <div class="input-container">
+                                    <label>
+                                        Nombre <span class="req">*</span>
+                                    </label>
+                                    <input type="text" name="name" required>
+                                </div>
+
+                                <div class="input-container">
+                                    <label>
+                                        Apellido <span class="req">*</span>
+                                    </label>
+                                    <input type="text" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <label>
+                                    Username <span class="req">*</span>
+                                </label>
+                                <input type="text" name="username" required>
+                            </div>
+                            <div class="input-container">
+                                <label>
+                                    E-mail <span class="req">*</span>
+                                </label>
+                                <input type="email" name="email" required>
+                            </div>
+                            <div class="input-container">
+                                <label>
+                                    Contraseña <span class="req">*</span>
+                                </label>
+                                <input type="password" name="password" minlength="8" required>
+                            </div>
+                            <div class="input-container">
+                                <label>
+                                    Confirmar Contraseña <span class="req">*</span>
+                                </label>
+                                <input type="password" name="confirmPassword" required>
+                            </div>
+                            <input type="submit" class="button button-block" value="Registrarse">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('../partials/footer') %>
+</body>
+
+</html>
