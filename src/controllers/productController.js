@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const { v4: newId } = require('uuid');
 newId();
-const db = require('../data/products.json')
+//const oldDb = require('../data/products.json')
+const db = require('../database/models');
+const Producto = require('../database/models/Producto');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -27,11 +29,13 @@ let productController = {
 
 
     store: (req, res) => {
-        console.log(req.body)
+
+
+        /* ******MÉTODO ANTIGUO (JSON)********
         let newProduct = {
             id: newId(),
             name: req.body.name,
-            description: req.body.descripcion,
+            description: req.body.description,
             image: req.body.formFile,
             color: req.body.exampleColorInput,
             price: req.body.price,
@@ -46,7 +50,19 @@ let productController = {
         } catch (error) {
             console.log(error.message)
         }
+        */
 
+        //MÉTODO NUEVO (SQL)    
+        db.Producto.Create({
+            name: req.body.name,
+            description: req.body.description,
+            image: req.body.formFile,
+            price: req.body.price,
+            product_category_id: req.body.category,
+            size_id: req.body.size,
+            color: req.body.color
+
+        })
 
     },
 

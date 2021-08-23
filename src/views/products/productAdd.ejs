@@ -26,9 +26,9 @@
                                 </div>
 
                                 <div class="field">
-                                    <label for="descripcion">Descripción del producto</label>
+                                    <label for="description">Descripción del producto</label>
                                     <div class="control">
-                                        <textarea name="descripcion"></textarea>
+                                        <textarea name="description" id="description"></textarea>
                                     </div>
                                     <p class="feedback"></p>
                                 </div>
@@ -38,9 +38,9 @@
                                     <input class="form-control" type="file" name="formFile" id="formFile">
                                 </div>
 
-                                <label for="exampleColorInput" class="form-label">Color del producto</label>
-                                <input type="color" class="form-control form-control-color" id="exampleColorInput"
-                                    value="#563d7c" title="Choose your color" name="exampleColorInput">
+                                <label for="color" class="form-label">Color del producto</label>
+                                <input type="color" class="form-control form-control-color" id="color" value="#03802c"
+                                    title="Color" name="color">
 
                                 <div class="field">
                                     <label for="price">Precio del producto</label>
@@ -50,14 +50,16 @@
                                     <p class="feedback"></p>
                                 </div>
 
-                                <select class="form-label" aria-label="Default select example" name="category">
+                                <select class="form-label" aria-label="Default select example" name="category"
+                                    id="category">
                                     <option selected>Categoría del producto</option>
-                                    <option value="1">Categoría 1</option>
-                                    <option value="2">Categoría 2</option>
-                                    <option value="3">Categoría 3</option>
+                                    <option value="1">Medicinales</option>
+                                    <option value="2">Decorativas</option>
+                                    <option value="3">Low Maintenance</option>
+                                    <option value="4">Gourmet</option>
                                 </select>
 
-                                <select class="form-label" aria-label="Default select example" name="size">
+                                <select class="form-label" aria-label="Default select example" name="size" id="size">
                                     <option selected>Tamaño del producto</option>
                                     <option value="1">Tamaño 1</option>
                                     <option value="2">Tamaño 2</option>
@@ -66,7 +68,7 @@
 
                                 <div class="field">
                                     <div class="control">
-                                        <button type="submit">crear producto</button>
+                                        <button type="submit">Crear producto</button>
                                     </div>
                                 </div>
 
