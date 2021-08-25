@@ -30,39 +30,46 @@ let productController = {
 
     store: (req, res) => {
 
-
-        /* ******MÉTODO ANTIGUO (JSON)********
-        let newProduct = {
-            id: newId(),
-            name: req.body.name,
-            description: req.body.description,
-            image: req.body.formFile,
-            color: req.body.exampleColorInput,
-            price: req.body.price,
-            category: req.body.category,
-            size: req.body.size
-        }
-
+        //MÉTODO NUEVO (SQL)   
         try {
-            products.push(newProduct);
-            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
+            db.Producto.create({
+                name: req.body.name,
+                description: req.body.description,
+                image: req.body.formFile,
+                price: req.body.price,
+                product_category_id: req.body.category,
+                size_id: req.body.size,
+                color: req.body.color
+
+            });
             res.redirect('/');
         } catch (error) {
             console.log(error.message)
         }
-        */
 
-        //MÉTODO NUEVO (SQL)    
-        db.Producto.Create({
-            name: req.body.name,
-            description: req.body.description,
-            image: req.body.formFile,
-            price: req.body.price,
-            product_category_id: req.body.category,
-            size_id: req.body.size,
-            color: req.body.color
 
-        })
+
+        /* ******MÉTODO ANTIGUO (JSON)********
+ let newProduct = {
+     id: newId(),
+     name: req.body.name,
+     description: req.body.description,
+     image: req.body.formFile,
+     color: req.body.exampleColorInput,
+     price: req.body.price,
+     category: req.body.category,
+     size: req.body.size
+ }
+
+ try {
+     products.push(newProduct);
+     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
+     res.redirect('/');
+ } catch (error) {
+     console.log(error.message)
+ }
+ */
+
 
     },
 

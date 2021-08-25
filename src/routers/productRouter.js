@@ -39,6 +39,6 @@ router.post('/:id/edit', productController.update)
 
 //eliminar un producto
 router.get('/:id/delete', productController.delete)
-router.delete('/:id/delete', productController.destroy)
+router.post('/:id/delete', productController.destroy)
 
 module.exports = router;
