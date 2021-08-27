@@ -31,26 +31,30 @@ let productController = {
     store: (req, res) => {
 
         //MÉTODO NUEVO (SQL)   
-        try {
-            db.Producto.create({
-                name: req.body.name,
-                description: req.body.description,
-                image: req.body.formFile,
-                price: req.body.price,
-                product_category_id: req.body.category,
-                size_id: req.body.size,
-                color: req.body.color
+        db.Producto
+            .create(
+                {
 
-            });
-            res.redirect('/');
-        } catch (error) {
-            console.log(error.message)
-        }
+                    name: req.body.name,
+                    description: req.body.description,
+                    image: req.body.formFile,
+                    price: req.body.price,
+                    product_category_id: req.body.category,
+                    size_id: req.body.size,
+                    color: req.body.color
+
+                }
+            )
+            .then(() => {
+                return res.redirect('/product')
+            })
+
+            .catch(error => res.send(error))
 
 
 
         /* ******MÉTODO ANTIGUO (JSON)********
- let newProduct = {
+    let newProduct = {
      id: newId(),
      name: req.body.name,
      description: req.body.description,
@@ -59,16 +63,16 @@ let productController = {
      price: req.body.price,
      category: req.body.category,
      size: req.body.size
- }
-
- try {
+    }
+    
+    try {
      products.push(newProduct);
      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
      res.redirect('/');
- } catch (error) {
+    } catch (error) {
      console.log(error.message)
- }
- */
+    }
+    */
 
 
     },

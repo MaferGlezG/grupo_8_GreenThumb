@@ -3,9 +3,11 @@
 module.exports = (sequelize, DataTypes) => {
     const Producto = sequelize.define("Producto", {
         id: {
-            type: DataTypes.INTEGER,
+
+            type: DataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
-            autoIncrement: true
+            allowNull: false,
+            autoIncrement: true,
 
         },
         name: {
@@ -31,7 +33,8 @@ module.exports = (sequelize, DataTypes) => {
         }
     }, {
         tableName: 'products',
-        timestamps: false
+        timestamps: false,
+        initialAutoIncrement: 10
     });
     return Producto;
 }
