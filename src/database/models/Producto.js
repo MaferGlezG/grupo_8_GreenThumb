@@ -34,7 +34,8 @@ module.exports = (sequelize, DataTypes) => {
     }, {
         tableName: 'products',
         timestamps: false,
-        initialAutoIncrement: 10
+
+
     });
     return Producto;
 }

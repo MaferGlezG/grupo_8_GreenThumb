@@ -3,9 +3,11 @@
 module.exports = (sequelize, DataTypes) => {
     const Talla = sequelize.define("Talla", {
         id: {
-            type: DataTypes.INTEGER,
+
+            type: DataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
-            autoIncrement: true
+            allowNull: false,
+            autoIncrement: true,
 
         },
         name: {

@@ -3,9 +3,12 @@
 module.exports = (sequelize, DataTypes) => {
     const Usuario = sequelize.define("Usuario", {
         id: {
-            type: DataTypes.INTEGER,
+
+            type: DataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
-            autoIncrement: true
+            allowNull: false,
+            autoIncrement: true,
+
         },
         first_name: {
             type: DataTypes.STRING

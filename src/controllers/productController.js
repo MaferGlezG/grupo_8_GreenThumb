@@ -79,20 +79,47 @@ let productController = {
 
     edit: (req, res) => {
         let productId = req.params.id;
-        let productToEdit = db[productId]
-        res.render('productEdit', { productToEdit: productToEdit });
+        let promProduct = db.Producto.findByPk(productId);
+        Promise
+            .all([promProduct])
+            .then(([productToEdit]) => {
+                return res.render(('products/productEdit'), { productToEdit })
+            })
+            .catch(error => res.send(error))
     },
 
     update: (req, res) => {
-        if (db[req.params.id].id == req.params.id) {
-            db[req.params.id].name = req.body.name;
-            db[req.params.id].description = req.body.description;
-            db[req.params.id].color = req.body.color;
-            db[req.params.id].price = req.body.price;
-            db[req.params.id].category = req.body.category;
-            db[req.params.id].size = req.body.size;
-        }
-        res.redirect('/:id/view')
+        //MÉTODO NUEVO (SQL) 
+        let productId = req.params.id;
+        db.Producto
+            .update(
+                {
+                    name: req.body.name,
+                    description: req.body.description,
+                    image: req.body.formFile,
+                    price: req.body.price,
+                    product_category_id: req.body.category,
+                    size_id: req.body.size,
+                    color: req.body.color
+                },
+                {
+                    where: { id: productId }
+                })
+            .then(() => {
+                return res.redirect('/product')
+            })
+            .catch(error => res.send(error))
+
+        /* ******MÉTODO ANTIGUO (JSON)********
+       if (db[req.params.id].id == req.params.id) {
+           db[req.params.id].name = req.body.name;
+           db[req.params.id].description = req.body.description;
+           db[req.params.id].color = req.body.color;
+           db[req.params.id].price = req.body.price;
+           db[req.params.id].category = req.body.category;
+           db[req.params.id].size = req.body.size;
+       }
+       res.redirect('/:id/view') */
     },
     delete: (req, res) => {
         res.render('productDelete');
