@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const { v4: newId } = require('uuid');
 newId();
-const db = require('../data/users.json')
+//const oldDb = require('../data/users.json')
+const db = require('../database/models');
+const Usuario = require('../database/models/Usuario');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -13,6 +15,26 @@ let userController = {
     },
 
     createUser: (req, res) => {
+
+        db.Usuario
+            .create(
+                {
+                    first_name: req.body.first_name,
+                    last_name: req.body.last_name,
+                    username: req.body.username,
+                    email: req.body.email,
+                    password: req.body.password,
+                    user_category_id: req.body.credentials,
+
+                }
+            )
+            .then(() => {
+                return res.redirect('/')
+            })
+
+            .catch(error => res.send(error))
+        /*
+        ******MÉTODO ANTIGUO (JSON)********
         let newUser = {
             id: newId(),
             first_name: req.body.first_name,
@@ -29,7 +51,7 @@ let userController = {
             res.redirect('/');
         } catch (error) {
             console.log(error.message)
-        }
+        }*/
     },
 
 

@@ -22,7 +22,7 @@
                     <!-- Iniciar Sesion -->
                     <div id="login">
                         <h1>Iniciar Sesión</h1>
-                        <form action="/register" method="GET">
+                        <form action="/login" method="POST">
                             <div class="input-container">
                                 <label>
                                     Usuario <span class="req">*</span>
@@ -48,39 +48,39 @@
                     <!-- Registrarse -->
                     <div id="signUp">
                         <h1>Registrarse</h1>
-                        <form action="/register" method="GET">
+                        <form action="/user/register" method="POST">
                             <div class="top-row">
                                 <div class="input-container">
                                     <label>
                                         Nombre <span class="req">*</span>
                                     </label>
-                                    <input type="text" name="name" required>
+                                    <input type="text" name="first_name" id="first_name" required>
                                 </div>
 
                                 <div class="input-container">
                                     <label>
                                         Apellido <span class="req">*</span>
                                     </label>
-                                    <input type="text" name="lastName" required>
+                                    <input type="text" name="last_name" id="last_name" required>
                                 </div>
                             </div>
                             <div class="input-container">
                                 <label>
-                                    Username <span class="req">*</span>
+                                    Nombre de Usuario <span class="req">*</span>
                                 </label>
-                                <input type="text" name="username" required>
+                                <input type="text" name="username" id="username" required>
                             </div>
                             <div class="input-container">
                                 <label>
                                     E-mail <span class="req">*</span>
                                 </label>
-                                <input type="email" name="email" required>
+                                <input type="email" name="email" id="email" required>
                             </div>
                             <div class="input-container">
                                 <label>
                                     Contraseña <span class="req">*</span>
                                 </label>
-                                <input type="password" name="password" minlength="8" required>
+                                <input type="password" name="password" id="password" minlength="8" required>
                             </div>
                             <div class="input-container">
                                 <label>
