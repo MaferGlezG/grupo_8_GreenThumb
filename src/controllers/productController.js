@@ -121,9 +121,7 @@ let productController = {
        }
        res.redirect('/:id/view') */
     },
-    delete: (req, res) => {
-        res.render('productDelete');
-    },
+
     destroy: (req, res) => {
         if (db[req.params.id].id == req.params.id) {
             db[req.params.id].delete

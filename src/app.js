@@ -19,6 +19,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(session({ secret: 'Secret' }));
+app.use(methodOverride('_method'));
 
 //TEMPLATE ENGINE
 app.set('views', path.join(__dirname, 'views'));

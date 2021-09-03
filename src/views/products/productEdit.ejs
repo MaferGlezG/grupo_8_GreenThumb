@@ -15,7 +15,7 @@
                     <div class="columns is-centered">
                         <div class="column is-6">
                             <h1>Crea tu producto</h1>
-                            <form action="/product/:id/edit?_method=PUT" method="POST">
+                            <form action="/product/<%= productToEdit.id%>/update?_method=PUT" method="POST">
 
                                 <div class="field">
                                     <label for="name">Nombre del producto</label>
@@ -28,7 +28,8 @@
                                 <div class="field">
                                     <label for="descripcion">Descripción del producto</label>
                                     <div class="control">
-                                        <textarea name="descripcion" value="<%= productToEdit.description%>"></textarea>
+                                        <input type="text" name="description" id="description"
+                                            value="<%= productToEdit.description%>">
                                     </div>
                                     <p class="feedback"></p>
                                 </div>
@@ -38,10 +39,9 @@
                                     <input class="form-control" type="file" name="formFile" id="formFile">
                                 </div>
 
-                                <label for="exampleColorInput" class="form-label">Color del producto</label>
-                                <input type="color" class="form-control form-control-color" id="exampleColorInput"
-                                    value="#563d7c" title="Choose your color" name="exampleColorInput"
-                                    value="<%= productToEdit.color%>">
+                                <label for="color" class="form-label">Color del producto</label>
+                                <input type="color" class="form-control form-control-color" id="color" value="#563d7c"
+                                    title="Choose your color" name="color" value="<%= productToEdit.color%>">
 
                                 <div class="field">
                                     <label for="price">Precio del producto</label>
