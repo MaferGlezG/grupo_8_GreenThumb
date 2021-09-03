@@ -41,7 +41,7 @@ Tienda de plantas y artículos de decoración. Velocidad de carga muy rápida, s
 
 Los productos no disponibles se muestran con un letrero de "vuelvo pronto" muy mono, y tiene una sección de artículos recomendados en el carrito (el carrito y la bíusqueda también son colapsables, al igual que el área de usuario)
 
-Junto con cada artículo muestra sus especificaciones, precio, altura y en algunos casos sus propiedades particulares (en plantas aroáticas, purificadoras, etc.)
+Junto con cada artículo muestra sus especificaciones, precio, altura y en algunos casos sus propiedades particulares (en plantas aromáticas, purificadoras, etc.)
 
 *** https://selvana.com.mx/ ***
 
