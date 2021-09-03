@@ -6,8 +6,10 @@ newId();
 const db = require('../database/models');
 const Usuario = require('../database/models/Usuario');
 
-const usersFilePath = path.join(__dirname, '../data/users.json');
+const usersFilePath = path.join(__dirname, '../data(obsolete)/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const bcrypt = require('bcryptjs');
+const session = require('express-session');
 
 let userController = {
     register: (req, res) => {
@@ -23,7 +25,7 @@ let userController = {
                     last_name: req.body.last_name,
                     username: req.body.username,
                     email: req.body.email,
-                    password: req.body.password,
+                    password: bcrypt.hashSync(req.body.password, 10),
                     user_category_id: req.body.credentials,
 
                 }
@@ -39,7 +41,7 @@ let userController = {
             id: newId(),
             first_name: req.body.first_name,
             last_name: req.body.last_name,
-            password: req.body.password,
+            password: bcrypt.hashSync(req.body.password),
             color: req.body.exampleColorInput,
             credentials: req.body.credentials,
             picture: req.body.picture,
@@ -54,13 +56,26 @@ let userController = {
         }*/
     },
     login: (req, res) => {
+
         db.Usuario.findOne(
             {
                 where:
                     { username: req.body.username }
             })
             .then((usuario) => {
-                if (usuario.password == req.body.password) { res.send(usuario) }
+                /*let passwordCheck = bcrypt.compareSync(req.body.password, usuario.password)
+                console.log(req.body.password);
+                console.log(usuario.password);
+                console.log(passwordCheck)
+                if (passwordCheck) { res.send(usuario) }
+                else {
+                    res.send("Wrong password")
+                }*/
+                if (req.body.password == usuario.password) {
+                    req.session.userLogged = usuario;
+                    console.log(req.session)
+                    res.redirect('/user/profile');
+                }
                 else {
                     res.send("Wrong password")
                 }
@@ -80,7 +95,15 @@ let userController = {
             })
             .catch(error => res.send(error))
     },
-
+    profile: (req, res) => {
+        res.render('users/profile', {
+            user: req.session.userLogged
+        })
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/');
+    }
 
 
 }

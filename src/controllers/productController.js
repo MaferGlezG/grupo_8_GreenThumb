@@ -6,7 +6,7 @@ newId();
 const db = require('../database/models');
 const Producto = require('../database/models/Producto');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
+const productsFilePath = path.join(__dirname, '../data(obsolete)/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 

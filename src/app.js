@@ -6,8 +6,9 @@ const rutasUsuario = require('./routers/userRouter');
 const rutasProducto = require('./routers/productRouter');
 const path = require('path');
 const bodyParser = require('body-parser');
-const methodOverride = require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
 const session = require('express-session');
+const bcryptjs = require('bcryptjs')
 
 
 //EXPRESS()
@@ -18,8 +19,13 @@ const app = express();
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
-app.use(session({ secret: 'Secret' }));
+app.use(session({
+  secret: 'Secret',
+  resave: false,
+  saveUninitialized: false
+}));
 app.use(methodOverride('_method'));
+
 
 //TEMPLATE ENGINE
 app.set('views', path.join(__dirname, 'views'));
