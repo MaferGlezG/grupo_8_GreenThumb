@@ -123,9 +123,20 @@ let productController = {
     },
 
     destroy: (req, res) => {
+
+        //NUEVO MÉTODO (SQL)
+        let productId = req.params.id;
+        db.Producto.destroy({
+            where: { id: productId }
+        })
+            .then(() => {
+                return res.redirect('/product')
+            })
+            .catch(error => res.send(error))
+        /* VIEJO MÉTODO (JSON)
         if (db[req.params.id].id == req.params.id) {
             db[req.params.id].delete
-        };
+        };*/
     },
 
 

@@ -53,6 +53,34 @@ let userController = {
             console.log(error.message)
         }*/
     },
+    login: (req, res) => {
+        db.Usuario.findOne(
+            {
+                where:
+                    { username: req.body.username }
+            })
+            .then((usuario) => {
+                if (usuario.password == req.body.password) { res.send(usuario) }
+                else {
+                    res.send("Wrong password")
+                }
+            })
+            .catch(error => res.send(error))
+
+
+
+    },
+    destroy: (req, res) => {
+        let userId = req.params.id;
+        db.Usuario.destroy({
+            where: { id: userId }
+        })
+            .then(() => {
+                return res.redirect('/')
+            })
+            .catch(error => res.send(error))
+    },
+
 
 
 }

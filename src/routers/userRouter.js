@@ -13,13 +13,11 @@ router.post('/register', userController.createUser);
 //router.post('/:id/update', userController.save);
 
 //Eliminar usuario
-//router.get('/:id/delete', userController.delete);
-//router.post('/:id/delete', userController.destroy);
+router.delete('/:id/delete', userController.destroy);
 
 
 //Validación de login
-//router.get('/login', userController.login);
-//router.post('/login', userController.validate);
+router.post('/login', userController.login);
 
 
 module.exports = router;
