@@ -79,6 +79,7 @@ CREATE TABLE `users`(
     `username` varchar(50) UNIQUE NOT NULL,
     `email` varchar(50) UNIQUE NOT NULL,
     `password` varchar(100) NOT NULL,
+	`image` varchar(70) DEFAULT NULL,
     `user_category_id` int(10) NOT NULL,
 	PRIMARY KEY(`id`)
 )AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
@@ -89,7 +90,7 @@ CREATE TABLE `users`(
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1, 'Mafer', 'Gonzalez', 'Maferglez', '16012603@udec.edu.mx', 'admin*', '1'), (2,'Cosme', 'Fulanito', 'CosmeFulanito', 'cf33@gmail.com', 'seller*', '2'), (3, 'Homer', 'Simpson', 'Donut1', 'donut@hotmail.com', 'user*', '3');
+INSERT INTO `users` VALUES (1, 'Mafer', 'Gonzalez', 'Maferglez', '16012603@udec.edu.mx', 'admin*', 'default.jpg','1'), (2,'Cosme', 'Fulanito', 'CosmeFulanito', 'cf33@gmail.com', 'seller*', 'default.jpg','2'), (3, 'Homer', 'Simpson', 'Donut1', 'donut@hotmail.com', 'user*','default.jpg', '3');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 

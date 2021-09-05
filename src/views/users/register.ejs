@@ -48,7 +48,7 @@
                     <!-- Registrarse -->
                     <div id="signUp">
                         <h1>Registrarse</h1>
-                        <form action="/user/register" method="POST">
+                        <form action="/user/register" method="POST" enctype="multipart/form-data">
                             <div class="top-row">
                                 <div class="input-container">
                                     <label>
@@ -82,16 +82,21 @@
                                 </label>
                                 <input type="password" name="password" id="password" minlength="8" required>
                             </div>
-                            <div class="input-container">
-                                <label>
-                                    Confirmar Contraseña <span class="req">*</span>
-                                </label>
-                                <input type="password" name="confirmPassword" required>
-                            </div>
-                            <input type="submit" class="button button-block" value="Registrarse">
-                        </form>
                     </div>
+                    <div class="input-container">
+                        <label for="formFile" class="form-label">Foto de perfil</label>
+                        <input class="form-control" type="file" name="formFile" id="formFile">
+                    </div>
+
+                    <label>
+                        Confirmar Contraseña <span class="req">*</span>
+                    </label>
+                    <input type="password" name="confirmPassword" required>
                 </div>
+                <input type="submit" class="button button-block" value="Registrarse">
+                </form>
+            </div>
+            </div>
             </div>
         </main>
         <%- include('../partials/footer') %>

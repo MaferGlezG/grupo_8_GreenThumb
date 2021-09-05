@@ -25,6 +25,9 @@ module.exports = (sequelize, DataTypes) => {
         password: {
             type: DataTypes.STRING
         },
+        image: {
+            type: DataTypes.STRING
+        },
         user_category_id: {
             type: DataTypes.INTEGER
         },
