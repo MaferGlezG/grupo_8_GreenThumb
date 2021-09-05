@@ -78,7 +78,7 @@ CREATE TABLE `users`(
     `last_name` varchar(50) NOT NULL,
     `username` varchar(50) UNIQUE NOT NULL,
     `email` varchar(50) UNIQUE NOT NULL,
-    `password` varchar(30) NOT NULL,
+    `password` varchar(100) NOT NULL,
     `user_category_id` int(10) NOT NULL,
 	PRIMARY KEY(`id`)
 )AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;

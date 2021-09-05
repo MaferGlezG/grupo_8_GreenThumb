@@ -17,7 +17,7 @@ let userController = {
     },
 
     createUser: (req, res) => {
-
+        const hash = bcrypt.hashSync(req.body.password, 10);
         db.Usuario
             .create(
                 {
@@ -25,7 +25,7 @@ let userController = {
                     last_name: req.body.last_name,
                     username: req.body.username,
                     email: req.body.email,
-                    password: bcrypt.hashSync(req.body.password, 10),
+                    password: hash,
                     user_category_id: req.body.credentials,
 
                 }
@@ -63,23 +63,40 @@ let userController = {
                     { username: req.body.username }
             })
             .then((usuario) => {
-                /*let passwordCheck = bcrypt.compareSync(req.body.password, usuario.password)
-                console.log(req.body.password);
-                console.log(usuario.password);
-                console.log(passwordCheck)
-                if (passwordCheck) { res.send(usuario) }
-                else {
-                    res.send("Wrong password")
-                }*/
-                if (req.body.password == usuario.password) {
-                    req.session.userLogged = usuario;
-                    console.log(req.session)
-                    res.redirect('/user/profile');
+                //login para usuarios de prueba (creados directo con la base de datos, no hash)
+                if (usuario.id = '1' || '2' || '3' || '4') {
+
+                    if (req.body.password == usuario.password) {
+
+                        req.session.userLogged = usuario;
+                        console.log(req.session)
+                        res.redirect('/user/profile');
+
+
+                    }
+                    else {
+                        res.send("Wrong password")
+                    }
                 }
+
+                //login para usuarios reales (hasheados)
                 else {
-                    res.send("Wrong password")
+                    let passwordCheck = bcrypt.compareSync(req.body.password, usuario.password);
+
+                    if (passwordCheck) {
+
+                        req.session.userLogged = usuario;
+                        console.log(req.session)
+                        res.redirect('/user/profile');
+
+
+                    }
+                    else {
+                        res.send("Wrong password")
+                    }
                 }
             })
+
             .catch(error => res.send(error))
 
 
