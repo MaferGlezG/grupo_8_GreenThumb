@@ -114,3 +114,17 @@ LOCK TABLES `user_category` WRITE;
 INSERT INTO `user_category` VALUES (1, 'Admin'),(2, 'Seller'),(3,'User');
 /*!40000 ALTER TABLE `user_category` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `user_category`
+--
+DROP TABLE IF EXISTS `shopping_cart`;
+CREATE TABLE `shopping_cart`(
+	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+	`user_id` int(10) NOT NULL,
+    `product_id` int(10) NOT NULL,
+    `product_amount` int(10) NOT NULL,
+    `total_price` decimal NOT NULL,
+    
+	PRIMARY KEY(`id`)
+)AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
