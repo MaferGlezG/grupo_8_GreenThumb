@@ -1,10 +1,12 @@
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require('express-validator');
 const { v4: newId } = require('uuid');
 newId();
 //const oldDb = require('../data/users.json')
 const db = require('../database/models');
 const Usuario = require('../database/models/Usuario');
+
 
 const usersFilePath = path.join(__dirname, '../data(obsolete)/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -54,7 +56,13 @@ let userController = {
         } catch (error) {
             console.log(error.message)
         }*/
-    },
+        const result = validationResult (req);
+        if (result.errors.length > 0) {
+            return res.render('users/register', {
+                errors: result.mapped()
+            })
+        };
+    }, 
     login: (req, res) => {
 
         db.Usuario.findOne(

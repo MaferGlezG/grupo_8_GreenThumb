@@ -54,49 +54,81 @@
                                     <label>
                                         Nombre <span class="req">*</span>
                                     </label>
-                                    <input type="text" name="first_name" id="first_name" required>
+                                    <input type="text" name="first_name" id="first_name" required class="form-control <%= locals.errors && errors.first_name ? "is-invalid" : null %>">
+                                    <% if (locals.errors && errors.first_name) { %>
+                                        <div class="text-danger">
+                                            <%= errors.first_name.msg %>
+                                        </div>
+                                    <% } %>
                                 </div>
 
                                 <div class="input-container">
                                     <label>
                                         Apellido <span class="req">*</span>
                                     </label>
-                                    <input type="text" name="last_name" id="last_name" required>
+                                    <input type="text" name="last_name" id="last_name" required class="form-control <%= locals.errors && errors.last_name ? "is-invalid" : null %>">
+                                    <% if (locals.errors && errors.last_name) { %>
+                                        <div class="text-danger">
+                                            <%= errors.last_name.msg %>
+                                        </div>
+                                    <% } %>
                                 </div>
                             </div>
                             <div class="input-container">
                                 <label>
                                     Nombre de Usuario <span class="req">*</span>
                                 </label>
-                                <input type="text" name="username" id="username" required>
+                                <input type="text" name="username" id="username" required class="form-control <%= locals.errors && errors.username ? "is-invalid" : null %>">
+                                <% if (locals.errors && errors.username) { %>
+                                    <div class="text-danger">
+                                        <%= errors.username.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                             <div class="input-container">
                                 <label>
                                     E-mail <span class="req">*</span>
                                 </label>
-                                <input type="email" name="email" id="email" required>
+                                <input type="email" name="email" id="email" required class="form-control <%= locals.errors && errors.email ? "is-invalid" : null %>">
+                                <% if (locals.errors && errors.email) { %>
+                                    <div class="text-danger">
+                                        <%= errors.email.msg %>
+                                    </div>
+                                <% } %>
                             </div>
                             <div class="input-container">
                                 <label>
                                     Contraseña <span class="req">*</span>
                                 </label>
-                                <input type="password" name="password" id="password" minlength="8" required>
+                                <input type="password" name="password" id="password" minlength="8" required class="form-control <%= locals.errors && errors.password ? "is-invalid" : null %>">
+                                <% if (locals.errors && errors.password) { %>
+                                    <div class="text-danger">
+                                        <%= errors.password.msg %>
+                                    </div>
+                                <% } %>
                             </div>
+                            <div class="input-container">
+                                <label>
+                                    Confirmar Contraseña <span class="req">*</span>
+                                </label>
+                                <input type="password" name="confirmPassword" required class="form-control <%= locals.errors && errors.confirmPassword ? "is-invalid" : null %>">
+                                <% if (locals.errors && errors.confirmPassword) { %>
+                                    <div class="text-danger">
+                                        <%= errors.confirmPassword.msg %>
+                                    </div>
+                                <% } %>
+                            </div>
+                            </div>
+                            <div class="input-container">
+                                <label for="formFile" class="form-label">Foto de perfil</label>
+                                <input class="form-control" type="file" name="formFile" id="formFile">
+                            </div>
+                            <div class="input-container">
+                                <input type="submit" class="button button-block" value="Registrarse">
+                            </div>                                  
+                        </form>
                     </div>
-                    <div class="input-container">
-                        <label for="formFile" class="form-label">Foto de perfil</label>
-                        <input class="form-control" type="file" name="formFile" id="formFile">
-                    </div>
-
-                    <label>
-                        Confirmar Contraseña <span class="req">*</span>
-                    </label>
-                    <input type="password" name="confirmPassword" required>
                 </div>
-                <input type="submit" class="button button-block" value="Registrarse">
-                </form>
-            </div>
-            </div>
             </div>
         </main>
         <%- include('../partials/footer') %>
