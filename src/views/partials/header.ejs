@@ -32,8 +32,30 @@
         font-size: 20px;
     }
 
-    header ul li {
+    header li {
         list-style-type: none;
+    }
+
+    header a {
+        text-decoration: none;
+    }
+
+    header button {
+        width: 50px;
+        color: var(--color-green);
+        background-color: var(--color-yellow);
+        border-radius: 20px;
+    }
+
+    header input {
+        width: 300px;
+        height: 30px;
+        outline: none;
+        border-radius: 20px;
+    }
+
+    .header-mobile {
+        display: block;
     }
 
     .header-mobile-fixed-nav {
@@ -43,12 +65,10 @@
         height: 40px;
     }
 
-    .header-mobile-fixed-nav-bar ul {
+    .header-mobile-fixed-nav-bar {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        align-content: center;
-
     }
 
     .header-mobile-fixed-nav-bar a {
@@ -61,10 +81,11 @@
         width: 40px;
         position: relative;
         top: 10px;
+
     }
 
     .burger-menu-item {
-        justify-self: flex-start;
+        justify-self: start;
     }
 
     .header-mobile-burger-menu i {
@@ -83,9 +104,6 @@
         justify-content: center;
     }
 
-    .header-mobile-logo-img {
-        width: 200px;
-    }
 
     .header-desktop {
         display: none;
@@ -94,97 +112,146 @@
     .header-desktop-top {
         display: flex;
         flex-direction: row;
+
     }
 
-    .header-desktop-logo img {
-        width: 250px;
+    .header-desktop-logo {
+        padding-left: 75px;
+
     }
 
     .header-desktop-fixed-nav {
+        display: flex;
+        background-color: var(--color-green);
+        z-index: 10;
+        width: 100%;
+        height: 60px;
+    }
+
+    .header-desktop-fixed-nav li {
+        color: var(--color-white);
+        flex-grow: 1;
+        padding-top: 20px;
+        padding-left: 10px;
+
+    }
+
+    .header-desktop-fixed-nav a {
+        color: var(--color-white);
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bolder;
+
+
+    }
+
+    .header-desktop-top-search-bar {
+        flex-grow: 1;
+        padding-left: 150px;
+        padding-top: 40px;
+    }
+
+
+
+    .header-desktop-top-profile-links {
+        padding-right: 75px;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .header-desktop-top-profile-links li {
+        flex-grow: 1;
+
+    }
+
+    .header-desktop-top-profile-links a {
+        font-size: 20px;
+        color: var(--color-black);
+        font-weight: bolder;
+        padding-right: 20px;
+    }
+
+    .invisible {
         display: none;
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    @media (min-width: 361px) {}
+
+    @media (min-width: 769px) {
+        .header-desktop {
+            display: block;
+        }
+
+        .header-mobile {
+            display: none;
+        }
     }
 </style>
 <header class="header-gen">
+
+    <!--HEADER PARA DISPOSITIVOS MÓVILES-->
     <div class="header-mobile">
 
         <div class="header-mobile-logo">
-            <div class="header-mobile-logo">
-                <a href="/"><img src="http://localhost:3333/images/mkt/logo_completo_blanco.png"
-                        alt="Logo tienda de plantas Green Thumb" class="header-mobile-logo-img"></a>
-            </div>
+            <a href="/"><img src="http://localhost:3333/images/mkt/logo_completo_blanco.png" width="200px"
+                    alt="Logo tienda de plantas Green Thumb"></a>
         </div>
-        <div class="header-mobile-fixed-nav">
+        <div class="header-mobile-fixed-nav" id="navbar">
             <div class="header-mobile-fixed-nav-bar">
-                <ul>
-                    <li class="burger-menu-item">
-                        <div class="header-mobile-burger-menu">
-                            <i class="fa fa-bars burger"></i>
-                        </div>
-                    </li>
-                    <li><a href="/"><i class="fas fa-home"></i></a></li>
-                    <li><a href="/user/register"><i class="fas fa-user"></i></a></li>
-                    <li><a href="/product/cart"><i class="fas fa-shopping-cart"></i></a></li>
-                </ul>
+
+                <li class="burger-menu-item">
+                    <div class="header-mobile-burger-menu">
+                        <i class="fa fa-bars burger"></i>
+                    </div>
+                </li>
+                <li><a href="/"><i class="fas fa-home"></i></a></li>
+                <li><a href="/user/register"><i class="fas fa-user"></i></a></li>
+                <li><a href="/product/cart"><i class="fas fa-shopping-cart"></i></a></li>
+
 
             </div>
         </div>
     </div>
+    <!--HEADER PARA COMPUTADORA-->
     <div class="header-desktop">
         <div class="header-desktop-top">
-            <div class="header-desktop-logo">
-                <img src="http://localhost:3333/images/mkt/logo_completo_blanco.png"
-                    alt="Logo tienda de plantas Green Thumb" class="header-desktop-logo-img">
+            <div class="header-desktop-logo-dv">
+                <a href="/"><img src="http://localhost:3333/images/mkt/logo_completo_blanco.png" width="400px"
+                        alt="Logo tienda de plantas Green Thumb" class="header-desktop-logo"></a>
             </div>
             <div class="header-desktop-top-search-bar">
                 <div class="form" action="#" method="GET">
-                    <div class="input"> <input type="text" name="search bar" placeholder="¿Qué estás buscando?"> </div>
-                    <div class="submit"><button><i class="fas fa-search"></i></button></div>
+                    <input type="text" name="search bar" placeholder="   ¿Qué estás buscando?">
+                    <button><i class="fas fa-search"></i></button>
                 </div>
-                <div class="header-desktop-top-language-select">
-                    <select name="nav-lanaguage">
-                        <option value="Spanish"> Español</option>
-                        <option value="English"> Inglés </option>
-                        <option value="Portuguese"> Portugués </option>
-                </div>
-                <div class="header-desktop-top-profile-links">
-                    <li><a href="/register">Crear cuenta</a></li>
-                    <li><a href="/register">Iniciar sesión</a></li>
-                </div>
+            </div>
+
+            <div class="header-desktop-top-profile-links">
+                <li><a href="/user/register#signUp">Crear cuenta</a></li>
+                <li><a href="/user/register#login">Iniciar sesión</a></li>
+                <li class="invisible"><a href="/user/profile">Mi perfil</a></li>
             </div>
         </div>
-        <div class="header-desktop-fixed-nav">
-            <div class="header-desktop-fixed-nav-bar">
-                <ul>
-                    <li> <select name="nav-categories">
-                            <option value="Categorías"> Categorías</option>
-                            <option value="Ofertas"> Ofertas </option>
-                            <option value="Novedades"> Novedades </option>
-                        </select></li>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/product-Showcase">Productos</a></li>
-                    <li><a href="/product-Showcase">Best sellers</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="/product-cart">Mi carrito <i class="fas fa-shopping-cart"></i></a></li>
-                </ul>
+        <div class="header-desktop-fixed-nav" id="navbar">
 
-            </div>
+            <li> <select name="nav-categories">
+                    <option value="Categorías"> Categorías</option>
+                    <option value="Ofertas"> Ofertas </option>
+                    <option value="Novedades"> Novedades </option>
+                </select></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/product/">Productos</a></li>
+            <li><a href="/product/">Best sellers</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="/product/cart">Mi carrito <i class="fas fa-shopping-cart"></i></a></li>
 
-            <div class="header-fixed-nav">
-                <div class="header-fixed-nav-bar">
-                    <ul>
-                        <li> <select name="nav-categories">
-                                <option value="Categorías"> Categorías</option>
-                                <option value="Ofertas"> Ofertas </option>
-                                <option value="Novedades"> Novedades </option>
-                            </select></li>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/product-Showcase">Productos</a></li>
-                        <li><a href="/product-Showcase">Best sellers</a></li>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="/product-cart">Mi carrito <i class="fas fa-shopping-cart"></i></a></li>
-                    </ul>
-
-                </div>
-            </div>
         </div>
+
 </header>
