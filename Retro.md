@@ -73,3 +73,60 @@
   
 5. *Dejar de hacer?*
   Dejar trabajos atrasados.
+
+  *********************************************************************************************************
+  **DESPUÉS DEL QUINTO SPRINT, ¿QUÉ TENEMOS QUE...**
+
+*********************************************************************
+1. *Comenzar a hacer?*
+    Hablar claro entre todos los participantes, ya que no se ha tenido una verdadera comunicación y esto nos está retrasando aún más.
+    
+2. *Hacer más?*
+  Seguir estudiando y practicando los temas para que logremos implementarlos de manera correcta en nuestro proyecto.
+  
+3. *Continuar haciendo?*
+   Comunicarnos como equipo.
+  
+4. *Hacer menos?*
+  Prestar atención excesiva a otros asuntos.
+  
+5. *Dejar de hacer?*
+  Dejar el proyecto incompleto.  
+
+  *********************************************************************************************************
+  **DESPUÉS DEL SEXTO SPRINT, ¿QUÉ TENEMOS QUE...**
+
+*********************************************************************
+1. *Comenzar a hacer?*
+    Priorizar las tareas e irlas realizando en el orden correspondiente .
+    
+2. *Hacer más?*
+  Enfocarnos a completar cada sprint.
+  
+3. *Continuar haciendo?*
+   Tratar de ir mejorando el código con los nuevos conocimientos que adquirimos.
+  
+4. *Hacer menos?*
+  Trabajar solo durante las clases o cuando podemos reunirnos.
+  
+5. *Dejar de hacer?*
+  Dejar nuestro trabajo incompleto.
+
+  *********************************************************************************************************
+  **DESPUÉS DEL SÉPTIMO SPRINT, ¿QUÉ TENEMOS QUE...**
+
+*********************************************************************
+1. *Comenzar a hacer?*
+    Enfocar nuestra atención a los sprints que tenemos con atraso y concluirlos.
+    
+2. *Hacer más?*
+  Dedicar mayor tiempo de calidad a nuestro proyecto.
+  
+3. *Continuar haciendo?*
+   Tratar de ponernos al corriente con el trabajo que falta.
+  
+4. *Hacer menos?*
+  Estancarnos en una sola tarea.
+  
+5. *Dejar de hacer?*
+  No pedir ayuda cuando tengamos duda.
