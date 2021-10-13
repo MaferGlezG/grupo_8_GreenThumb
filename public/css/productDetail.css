@@ -275,6 +275,10 @@ display: none;
     .productos-recomendados-item{
         padding: 15px;
     }
+        .productos-recomendados-item a{
+            text-decoration: none;
+            color: #000000;
+        }
         .productos-recomendados-item img{
             width: 100px;
         }

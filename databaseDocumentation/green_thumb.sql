@@ -9,6 +9,7 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
+  `stock` int(10) NOT NULL,
   `description` text NOT NULL,
   `image` varchar(70) DEFAULT NULL,
   `price` decimal NOT NULL,
@@ -24,7 +25,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (4,'Una prueba', 'Descripción de prueba', 'foto.png', '66.00', 1, 1,'#1c8334' ), (1, 'Aloe Vera','Planta de Aloe Vera', 'aloe1.png', '65.00', 1, 1,'#1c6334' ), (2, 'Noche Buena', 'Planta tradicional de navidad en Mexico', 'nochebuena1.png', '25.00', 2, 2,'#ab0a0a' ), (3,  'Suculenta Basica', 'Suculenta de poca altura, ideal para principiantes en el cuidado de plantas', 'suculenta1.png', '15.50', 3, 3,'#579620' );
+INSERT INTO `products` VALUES  (1, 'Aloe Vera', '6', 'Planta de Aloe Vera', 'aloe1.png', '65.00', 1, 1,'#1c6334' ), (2, 'Noche Buena', '7','Planta tradicional de navidad en Mexico', 'nochebuena1.jpg', '25.00', 2, 2,'#ab0a0a' ), (3,  'Suculenta Basica', '9', 'Suculenta de poca altura, ideal para principiantes en el cuidado de plantas', 'suculenta1.jpg', '15.50', 3, 3,'#579620' );
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,7 +79,7 @@ CREATE TABLE `users`(
     `last_name` varchar(50) NOT NULL,
     `username` varchar(50) UNIQUE NOT NULL,
     `email` varchar(50) UNIQUE NOT NULL,
-    `password` varchar(100) NOT NULL,
+    `password` varchar(150) NOT NULL,
 	`image` varchar(70) DEFAULT NULL,
     `user_category_id` int(10) NOT NULL,
 	PRIMARY KEY(`id`)

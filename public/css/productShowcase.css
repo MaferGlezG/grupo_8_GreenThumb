@@ -13,8 +13,6 @@
     display: inline;
 }
 .sortBy {
-    display: flex;
-    justify-content: flex-end;
     font-weight: 500;
     font-size: larger;
     align-items: center;
@@ -26,7 +24,6 @@
 
 .filters {
     background-color: hsl(0, 0%, 100%);
-    flex-direction: column;
     padding: 2%;
     width: 13%;
     
@@ -37,12 +34,21 @@
         padding-left: 2%;
         margin-bottom: 10%;
     }
+    .filters ul {
+        display: flex;
+  
+    }
     .filters ul li {
         list-style: none;
-        flex-direction: column;
+        flex-direction: row;
         margin-top: 10%;
         align-items: stretch;
     }
+.products{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
 .products img{
     inline-size: 30%;

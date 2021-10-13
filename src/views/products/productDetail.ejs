@@ -15,24 +15,22 @@
                     <!--Productos recomendados-->
                     <h2>Productos Recomendados</h2>
                     <ul class="productos-recomendados">
-                        <li class="productos-recomendados-item">
-                            <img src="http://localhost:3333/images/products/main-productos-planta1.png" alt="planta 1">
-                            <i class="fas fa-cart-plus"></i>
-                            <h3>Nombre del producto</h3>
-                            <h2>$XX-$XXX</h2>
-                        </li>
-                        <li class="productos-recomendados-item">
-                            <img src="http://localhost:3333/images/products/main-productos-planta2.png" alt="planta 2">
-                            <i class="fas fa-cart-plus"></i>
-                            <h3>Nombre del producto</h3>
-                            <h2>$XX-$XXX</h2>
-                        </li>
-                        <li class="productos-recomendados-item">
-                            <img src="http://localhost:3333/images/products/main-productos-planta4.png" alt="planta 3">
-                            <i class="fas fa-cart-plus"></i>
-                            <h3>Nombre del producto</h3>
-                            <h2>$XX-$XXX</h2>
-                        </li>
+                        <% for (let i=0; i < data.length; i++) { %>
+                            <% if (data[i].id !=producto.id) { %>
+                                <li class="productos-recomendados-item">
+                                    <a href="/product/<%=data[i].id%>/view"><img
+                                            src="/images/products/<%=data[i].image%>" alt="<%=data[i].name%>">
+                                        <i class="fas fa-cart-plus"></i>
+                                        <h3>
+                                            <%=data[i].name%>
+                                        </h3>
+                                        <h2>$<%=data[i].price%>
+                                        </h2>
+                                    </a>
+                                </li>
+                                <%} %>
+                                    <%} %>
+
                     </ul>
                 </div>
 
@@ -41,71 +39,15 @@
                     <div class="gallery gallery-a js-flickity"
                         data-flickity-options='{ "wrapAround": true, "freeScroll": true, "fullscreen" : true, "pageDots" : false }'>
                         <div class="main-carousel-banner">
-                            <img src="http://localhost:3333/images/products/aloe1.png" height="600" width="600"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-banner">
-                            <img src="http://localhost:3333/images/products/aloe2.png" height="600" width="600"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-banner">
-                            <img src="http://localhost:3333/images/products/aloe3.png" height="600" width="600"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-banner">
-                            <img src="http://localhost:3333/images/products/aloe4.png" height="600" width="600"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-banner">
-                            <img src="http://localhost:3333/images/products/aloe5.png" height="600" width="600"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-banner">
-                            <img src="http://localhost:3333/images/products/aloe6.png" height="600" width="600"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-banner">
-                            <img src="http://localhost:3333/images/products/aloe7.png" height="600" width="600"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-banner">
-                            <img src="http://localhost:3333/images/products/aloe8.png" height="600" width="600"
-                                alt="Aloe Vera">
+                            <img src="/images/products/<%=producto.image%>" height="600" width="600"
+                                alt="<%=producto.name%>">
                         </div>
                     </div>
                     <div class="gallery gallery-b js-flickity"
                         data-flickity-options='{ "asNavFor": ".gallery-a", "wrapAround": true, "freeScroll": true }'>
                         <div class="main-carousel-nav">
-                            <img src="http://localhost:3333/images/products/aloe1.png" height="100" width="100"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-nav">
-                            <img src="http://localhost:3333/images/products/aloe2.png" height="100" width="100"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-nav">
-                            <img src="http://localhost:3333/images/products/aloe3.png" height="100" width="100"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-nav">
-                            <img src="http://localhost:3333/images/products/aloe4.png" height="100" width="100"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-nav">
-                            <img src="http://localhost:3333/images/products/aloe5.png" height="100" width="100"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-nav">
-                            <img src="http://localhost:3333/images/products/aloe6.png" height="100" width="100"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-nav">
-                            <img src="http://localhost:3333/images/products/aloe7.png" height="100" width="100"
-                                alt="Aloe Vera">
-                        </div>
-                        <div class="main-carousel-nav">
-                            <img src="http://localhost:3333/images/products/aloe8.png" height="100" width="100"
-                                alt="Aloe Vera">
+                            <img src="/images/products/<%=producto.image%>" height="100" width="100"
+                                alt="<%=producto.name%>">
                         </div>
                     </div>
 
@@ -113,15 +55,17 @@
 
                 <div class="main-product-info">
                     <!--Información del producto-->
-                    <h1>Aloe Vera</h1>
-                    <h3>Disponibles: XXX</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus suscipit molestias ducimus.
-                        Officiis numquam eaque fugit distinctio repellendus tempora dolore tempore perferendis corrupti,
-                        voluptas enim alias sapiente, aliquid laboriosam maxime!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ea illo, provident dolorum ab
-                        pariatur modi nemo? Facilis architecto unde atque quibusdam ducimus, eum consequuntur labore,
-                        debitis voluptate vero magnam.</p>
-                    <h2>$XX-$XXX</h2>
+                    <h1>
+                        <%=producto.name%>
+                    </h1>
+                    <h3>Disponibles: <%=producto.stock%>
+                    </h3>
+                    <p>
+                        <%=producto.description%>
+                    </p>
+
+                    <h2>$<%=producto.price%>
+                    </h2>
                     <div class="label-and-select">
                         <label for="size-select">
                             <h2>Tamaño</h2>

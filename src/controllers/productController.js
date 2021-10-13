@@ -13,14 +13,43 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 let productController = {
     detail: (req, res) => {
-        res.render('products/productDetail');
+        db.Producto.findOne(
+            {
+                where:
+                    { id: req.params.id }
+            }, {
+            include: [{
+                association: "category"
+            }
+            ]
+        })
+            .then(function (producto) {
+
+                db.Producto.findAll()
+                    .then(function (data) {
+                        res.render('products/productDetail', { producto: producto, data: data });
+                    })
+
+            })
+
     },
 
     cart: (req, res) => {
         res.render('products/productCart');
     },
     showcase: (req, res) => {
-        res.render('products/productShowcase');
+        db.Producto.findAll()
+            .then(function (products) {
+                db.Producto_Categoria.findAll()
+                    .then(function (categorias) {
+                        db.Talla.findAll()
+                            .then(function (tallas) {
+                                res.render('products/productShowcase', { categorias: categorias, tallas: tallas, products: products });
+                            })
+
+                    })
+            })
+
     },
     //Formato de creación de producto
     add: (req, res) => {
@@ -46,6 +75,7 @@ let productController = {
                 {
 
                     name: req.body.name,
+                    stock: req.body.stock,
                     description: req.body.description,
                     image: req.body.formFile,
                     price: req.body.price,
@@ -105,6 +135,7 @@ let productController = {
             .update(
                 {
                     name: req.body.name,
+                    stock: req.body.stock,
                     description: req.body.description,
                     image: req.body.formFile,
                     price: req.body.price,

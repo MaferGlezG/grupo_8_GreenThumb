@@ -17,7 +17,7 @@ const app = express();
 
 //MIDDLEWARES
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(session({
   secret: 'Secret',
