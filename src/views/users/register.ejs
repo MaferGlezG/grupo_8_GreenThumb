@@ -77,24 +77,38 @@
                                 <input type="email" name="email" id="email" required>
                             </div>
                             <div class="input-container">
+                                <select class="form-label" aria-label="Default select example" name="credentials"
+                                    id="credentials">
+                                    <option selected>Selecciona el tipo de cuenta</option>
+                                    <option value="2">¡Quiero vender!</option>
+                                    <option value="3">¡Quiero comprar!</option>
+                                </select>
+                            </div>
+                            <div class="input-container">
                                 <label>
                                     Contraseña <span class="req">*</span>
                                 </label>
                                 <input type="password" name="password" id="password" minlength="8" required>
                             </div>
-                    </div>
-                    <div class="input-container">
-                        <label for="formFile" class="form-label">Foto de perfil</label>
-                        <input class="form-control" type="file" name="formFile" id="formFile">
+                            <div>
+                                <label for="formFile" class="form-label">Foto de perfil<span
+                                        class="req">*</span></label>
+
+                                <input class="form-control" type="file" name="formFile" id="formFile">
+                            </div>
+                            <div class="input-container"></div>
+                            <div class="input-container">
+                                <label for="confirmPassword">
+                                    Confirmar Contraseña <span class="req">*</span>
+                                </label>
+                                <input type="password" name="confirmPassword" required>
+                            </div>
                     </div>
 
-                    <label>
-                        Confirmar Contraseña <span class="req">*</span>
-                    </label>
-                    <input type="password" name="confirmPassword" required>
+
+                    <input type="submit" class="button button-block" value="Registrarse">
+                    </form>
                 </div>
-                <input type="submit" class="button button-block" value="Registrarse">
-                </form>
             </div>
             </div>
             </div>

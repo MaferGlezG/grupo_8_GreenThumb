@@ -14,8 +14,14 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING
         }
     }, {
-        tableName: 'products_category',
+        tableName: 'sizes',
         timestamps: false
     });
+    Talla.associate = function (models) {
+        Talla.hasMany(models.Producto, {
+            as: "size",
+            foreignKey: "size_id"
+        })
+    }
     return Talla;
 }

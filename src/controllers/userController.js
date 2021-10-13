@@ -61,7 +61,12 @@ let userController = {
             {
                 where:
                     { username: req.body.username }
-            })
+            }, {
+            include: [{
+                association: "category"
+            }
+            ]
+        })
             .then((usuario) => {
                 //login para usuarios de prueba (creados directo con la base de datos, no hash)
                 if (usuario.id = '1' || '2' || '3' || '4') {

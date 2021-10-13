@@ -193,7 +193,9 @@ main .button {
         color: var(--color-yellow);
     }
 
-
+.form-label{
+position: relative;
+}
 
 @media (min-width: 361px){
 

@@ -53,17 +53,29 @@
                                 <select class="form-label" aria-label="Default select example" name="category"
                                     id="category">
                                     <option selected>Categoría del producto</option>
-                                    <option value="1">Medicinales</option>
+                                    <% for (let i=0; i < categorias.length; i++) { %>
+                                        <option value=<%=categorias[i].id%>>
+                                            <%=categorias[i].name%>
+                                        </option>
+
+                                        <% } %>
+                                            <!--<option value="1">Medicinales</option>
                                     <option value="2">Decorativas</option>
                                     <option value="3">Low Maintenance</option>
-                                    <option value="4">Gourmet</option>
+                                    <option value="4">Gourmet</option>-->
                                 </select>
 
                                 <select class="form-label" aria-label="Default select example" name="size" id="size">
                                     <option selected>Tamaño del producto</option>
-                                    <option value="1">Tamaño 1</option>
+                                    <% for (let i=0; i < tallas.length; i++) { %>
+                                        <option value=<%=tallas[i].id%>>
+                                            <%=tallas[i].name%>
+                                        </option>
+                                        <% } %>
+                                            <!--<option value="1">Tamaño 1</option>
                                     <option value="2">Tamaño 2</option>
-                                    <option value="3">Tamaño 3</option>
+                                    <option value="3">Tamaño 3</option>-->
+
                                 </select>
 
                                 <div class="field">

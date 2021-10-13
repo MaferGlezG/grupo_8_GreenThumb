@@ -35,5 +35,12 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'users',
         timestamps: false
     });
+
+    Usuario.associate = function (models) {
+        Usuario.belongsTo(models.Usuario_Categoria, {
+            as: "category",
+            foreignKey: "user_category_id"
+        })
+    }
     return Usuario;
 }

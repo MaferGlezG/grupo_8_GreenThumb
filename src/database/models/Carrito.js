@@ -24,5 +24,11 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'shopping_cart',
         timestamps: false
     });
+    Carrito.associate = function (models) {
+        Carrito.belongsTo(models.Usuario, {
+            as: "user",
+            foreignKey: "user_id"
+        })
+    }
     return Carrito;
 }

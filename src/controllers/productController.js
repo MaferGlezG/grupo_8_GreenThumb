@@ -24,7 +24,17 @@ let productController = {
     },
     //Formato de creación de producto
     add: (req, res) => {
-        res.render('products/productAdd');
+        //Pasar las tallas y categorías
+        db.Producto_Categoria.findAll()
+            .then(function (categorias) {
+                //esto no está funcionando
+                db.Talla.findAll()
+                    .then(function (tallas) {
+                        res.render('products/productAdd', { categorias: categorias, tallas: tallas });
+                    })
+
+            })
+
     },
 
 
