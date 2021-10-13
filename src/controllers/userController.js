@@ -56,13 +56,13 @@ let userController = {
         } catch (error) {
             console.log(error.message)
         }*/
-        const result = validationResult (req);
+        const result = validationResult(req);
         if (result.errors.length > 0) {
             return res.render('users/register', {
                 errors: result.mapped()
             })
         };
-    }, 
+    },
     login: (req, res) => {
 
         db.Usuario.findOne(
@@ -77,7 +77,7 @@ let userController = {
         })
             .then((usuario) => {
                 //login para usuarios de prueba (creados directo con la base de datos, no hash)
-                if (usuario.id = '1' || '2' || '3' || '4') {
+                if (usuario.id == '1' || usuario.id == '2' || usuario.id == '3') {
 
                     if (req.body.password == usuario.password) {
 
@@ -88,6 +88,7 @@ let userController = {
 
                     }
                     else {
+                        console.log(req.session)
                         res.send("Wrong password")
                     }
                 }
@@ -95,7 +96,7 @@ let userController = {
                 //login para usuarios reales (hasheados)
                 else {
                     let passwordCheck = bcrypt.compareSync(req.body.password, usuario.password);
-
+                    console.log(passwordCheck);
                     if (passwordCheck) {
 
                         req.session.userLogged = usuario;
