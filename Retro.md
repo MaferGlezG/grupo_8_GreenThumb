@@ -129,4 +129,5 @@
   Estancarnos en una sola tarea.
   
 5. *Dejar de hacer?*
-  No pedir ayuda cuando tengamos duda.
+  No pedir ayuda cuando tengamos duda. 
+  
