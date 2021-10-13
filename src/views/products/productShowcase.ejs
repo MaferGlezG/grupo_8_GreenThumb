@@ -18,40 +18,40 @@
                     <option value="a-z">Nombre</option>
                 </select>
             </div>
+            <div class="filter-title">
+                <h2>Filtrar</h2>
+                <i class="fas fa-filter"></i>
+            </div>
             <div class="filters">
-                <ul>
-                    <div>
-                        <h2>Filtrar</h2>
-                        <i class="fas fa-filter"></i>
-                        <li class="filter">
-                    </div>
-                    <div>
-                        <h3 class="categories">Categoría</h3><br>
-                        <% for (let i=0; i < categorias.length; i++) { %>
-                            <input type="checkbox" name="category" value="<%=categorias[i].id%>"><label for="category"
-                                checked>
-                                <%=categorias[i].name%>
+
+
+                <div>
+                    <h3 class="categories">Categoría</h3><br>
+                    <% for (let i=0; i < categorias.length; i++) { %>
+                        <input type="checkbox" name="category" value="<%=categorias[i].id%>"><label for="category"
+                            checked>
+                            <%=categorias[i].name%>
+                        </label>
+                        </li><br>
+                        <%}%>
+                </div>
+                <div>
+                    <li class="filter">
+                        <h3 class="sizes">Tamaño</h3><br>
+                        <% for (let i=0; i < tallas.length; i++) { %>
+                            <input type="checkbox" name="size" value="<%=tallas[i].id%>"><label for="size" checked>
+                                <%=tallas[i].name%>
                             </label><br>
-                            </li>
                             <%}%>
-                    </div>
-                    <div>
-                        <li class="filter">
-                            <h3 class="sizes">Tamaño</h3><br>
-                            <% for (let i=0; i < tallas.length; i++) { %>
-                                <input type="checkbox" name="size" value="<%=tallas[i].id%>"><label for="size" checked>
-                                    <%=tallas[i].name%>
-                                </label><br>
-                                <%}%>
-                        </li>
-                    </div>
-                </ul>
+                    </li>
+                </div>
+
             </div>
             <div class="products">
                 <% for (let i=0; i < products.length; i++) { %>
                     <article class="showcase-product">
                         <a href="/product/<%=products[i].id%>/view"><img src="/images/products/<%=products[i].image%>"
-                                alt="<%=products[i].name%>" class="product-img" width="400" height="400">
+                                alt="<%=products[i].name%>" class="product-img" width="200" height="200">
                             <div class="article">
                                 <a href="/product-cart" class="main-showcase-carrito"><i
                                         class="fas fa-cart-plus"></i></a>

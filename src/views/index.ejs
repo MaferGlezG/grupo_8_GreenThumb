@@ -28,71 +28,29 @@
                 <h1>Lo más popular</h1>
             </div>
             <div class="main-showcase">
+                <% for (let i=0; i < products.length; i++) { %>
 
-                <article class="main-showcase-producto">
-                    <a href="/product/1/view">
-                        <img src="images/products/main-productos-planta1.png" alt="planta 1" class="product-img">
-                        <div class="main-article">
-                            <a href="/product/cart" class="main-showcase-carrito"><i class="fas fa-cart-plus"></i></a>
-                            <h4 class="main-article-nombre">Planta</h4>
-                            <p class="main-article-precio">$230.000</p>
-                            <p class="main-article-descuento">20% off</p>
-                            <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                    </a>
-                </article>
-
-                <article class="main-showcase-producto">
-                    <a href="/product/1/view">
-                        <img src="images/products/main-productos-planta2.png" alt="planta 2" class="product-img">
-                        <div class="main-article">
-                            <a href="/product/cart"><i class="fas fa-cart-plus"></i></a>
-                            <h4 class="main-article-nombre">Planta</h4>
-                            <p class="main-article-precio">$230.000</p>
-                            <p class="main-article-descuento">20% off</p>
-                            <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                    </a>
-                </article>
-                <article class="main-showcase-producto">
-                    <a href="/product/1/view">
-                        <img src="images/products/main-productos-planta3.png" alt="planta 3" class="product-img">
-                        <div class="main-article">
-                            <a href="/product/cart"><i class="fas fa-cart-plus"></i></a>
-                            <h4 class="main-article-nombre">Planta</h4>
-                            <p class="main-article-precio">$230.000</p>
-                            <p class="main-article-descuento">20% off</p>
-                            <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                    </a>
-                </article>
-                <article class="main-showcase-producto">
-                    <a href="/product/1/view">
-                        <img src="images/products/main-productos-planta4.png" alt="planta 4" class="product-img">
-                        <div class="main-article">
-                            <a href="/product/cart"><i class="fas fa-cart-plus"></i></a>
-                            <h4 class="main-article-nombre">Planta</h4>
-                            <p class="main-article-precio">$230.000</p>
-                            <p class="main-article-descuento">20% off</p>
-                            <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                    </a>
-                </article>
-                <article class="main-showcase-producto">
-                    <a href="/product/1/view">
-                        <img src="images/products/aloe5.png" alt="planta 4" class="product-img">
-                        <div class="main-article">
-                            <a href="/product/cart"><i class="fas fa-cart-plus"></i></a>
-                            <h4 class="main-article-nombre">Aloe Vera</h4>
-                            <p class="main-article-precio">$230.000</p>
-                            <p class="main-article-descuento">20% off</p>
-                            <p class="main-article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                    </a>
-                </article>
+                    <article class="main-showcase-producto">
+                        <a href="/product/<%=products[i].id%>/view">
+                            <img src="images/products/<%=products[i].image%>" alt="<%=products[i].name%>"
+                                class="product-img">
+                            <div class="main-article">
+                                <a href="/product/cart" class="main-showcase-carrito"><i
+                                        class="fas fa-cart-plus"></i></a>
+                                <h4 class="main-article-nombre">
+                                    <%=products[i].name%>
+                                </h4>
+                                <p class="main-article-precio">$<%=products[i].price%>
+                                </p>
+                                <p class="main-article-descuento">
+                                    <%=products[i].stock%> Disponibles
+                                </p>
+                                <p class="main-article-description">
+                                    <%=products[i].description%>
+                                </p>
+                        </a>
+                    </article>
+                    <%}%>
             </div>
         </main>
         <%- include('./partials/footer') %>
