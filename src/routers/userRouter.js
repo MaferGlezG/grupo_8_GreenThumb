@@ -4,7 +4,7 @@ const multer = require('multer');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const path = require('path');
 const authMiddleware = require('../middlewares/authMiddleware');
-const { body, validationResult } = require('express-validator');
+const { body } = require('express-validator');
 
 const multerDiskStorage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -20,30 +20,39 @@ const multerDiskStorage = multer.diskStorage({
 
 const fileUpload = multer({ storage: multerDiskStorage });
 const userController = require('../controllers/userController');
+
 const validations = [
-    body('first_name', 'Debes escribir un nombre')
+    body('first_name')
         .notEmpty()
+        .withMessage('Debes escribir un nombre')
         .isLength({ min: 3 }),
-    body('last_name', 'Debes escribir un apellido')
+    body('last_name')
         .notEmpty()
+        .withMessage('Debes escribir un apellido')
         .isLength({ min: 3 }),
-    body('username', 'Debes escribir un nombre de usuario')
+    body('username')
         .notEmpty()
+        .withMessage('Debes escribir un nombre de usuario')
         .isLength({ min: 3 }),
-    body('email', 'Debes escribir un correo electrónico')
+    body('email')
         .notEmpty()
+        .withMessage('Debes escribir un correo electrónico')
         .isEmail(),
-    body('password', 'Debes escribir una contraseña')
+    body('password')
         .notEmpty()
+        .withMessage('Debes escribir una contraseña')
         .isLength({ min: 8 }),
-    body('confirmPassword', 'La contraseña debe coincidir')
+    body('confirmPassword')
         .notEmpty()
+        .withMessage('La contraseña debe coincidir')
         .isLength({min : 8 }),
 ];
+
 
 //Crear un nuevo usurario
 router.get('/register', guestMiddleware, userController.register);
 router.post('/register', fileUpload.single("formFile"), validations, userController.createUser);
+
 
 
 //Actualizar usuario

@@ -17,8 +17,19 @@ let userController = {
     register: (req, res) => {
         res.render('users/register');
     },
-
     createUser: (req, res) => {
+        const errors = validationResult(req);
+        
+        if(errors.isEmpty()) {
+        console.log(req.body);
+        const values = req.body;
+        const validations = errors.array();
+        res.render('register', { validations: validations, values: values });
+        }else {        
+        res.redirect('/')
+        };
+        
+
         const hash = bcrypt.hashSync(req.body.password, 10);
         db.Usuario
             .create(
@@ -56,12 +67,13 @@ let userController = {
         } catch (error) {
             console.log(error.message)
         }*/
-        const result = validationResult(req);
+
+        /*const result = validationResult(req);
         if (result.errors.length > 0) {
             return res.render('users/register', {
                 errors: result.mapped()
             })
-        };
+        }; */
     },
     login: (req, res) => {
 
