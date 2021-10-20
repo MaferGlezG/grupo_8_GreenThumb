@@ -31,6 +31,7 @@ let userController = {
 
 
         const hash = bcrypt.hashSync(req.body.password, 10);
+        console.log(req);
         db.Usuario
             .create(
                 {
@@ -39,6 +40,7 @@ let userController = {
                     username: req.body.username,
                     email: req.body.email,
                     password: hash,
+                    image: req.body.nFileName,
                     user_category_id: req.body.credentials,
 
                 }
@@ -129,7 +131,7 @@ let userController = {
 
     },
     destroy: (req, res) => {
-        let userId = req.params.id;
+        let userId = req.session.userLogged.id;
         db.Usuario.destroy({
             where: { id: userId }
         })
@@ -149,6 +151,26 @@ let userController = {
         })
     },
     save: (req, res) => {
+        let userId = req.session.userLogged.id;
+
+        db.Usuario
+            .update(
+                {
+                    first_name: req.body.first_name,
+                    last_name: req.body.last_name,
+                    username: req.body.username,
+                    email: req.body.email,
+
+
+                },
+                {
+                    where: { id: userId }
+                }
+            )
+            .then(() => {
+                return res.redirect('/')
+            })
+            .catch(error => res.send(error))
 
     },
     logout: (req, res) => {

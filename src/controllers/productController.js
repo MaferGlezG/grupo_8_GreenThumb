@@ -68,7 +68,9 @@ let productController = {
 
 
     store: (req, res) => {
-        //MÉTODO NUEVO (SQL)   
+        //MÉTODO NUEVO (SQL) 
+        console.log(req)
+
         db.Producto
             .create(
                 {
@@ -76,7 +78,7 @@ let productController = {
                     name: req.body.name,
                     stock: req.body.stock,
                     description: req.body.description,
-                    image: req.body.formFile,
+                    image: req.body.nFileName,
                     price: req.body.price,
                     product_category_id: req.body.category,
                     size_id: req.body.size,

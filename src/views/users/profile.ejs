@@ -20,24 +20,27 @@
                         <h1>¡Saludos, <%=user.first_name%>!</h1>
                     </div>
                     <div class="profile-edit">
-                        <a href="/userEdit">
+                        <a href="/user/edit">
                             <button type="submit">Editar mi perfil</button>
                         </a>
                     </div>
-                    <a href="/product/add">
-                        <button type="submit">Crear producto</button>
-                    </a>
-                    <a href="/user/:id/showcase">
-                        <button type="submit">Mis productos</button>
-                    </a>
-                    <div class="profile-log-out">
-                        <a href="/">
-                            <button type="submit">Cerrar sesión</button>
+                    <% if (user.user_category_id==1 || user.user_category_id==2) {%>
+
+                        <a href="/product/add" id="credentials-sensitive">
+                            <button type="submit">Crear producto</button>
                         </a>
-                    </div>
-                    <a href="/">
-                        <button type="submit">Eliminar cuenta</button>
-                    </a>
+                        <a href="/user/:id/showcase">
+                            <button type="submit">Mis productos</button>
+                        </a>
+                        <% } %>
+                            <div class="profile-log-out">
+                                <a href="/user/logout">
+                                    <button type="submit">Cerrar sesión</button>
+                                </a>
+                            </div>
+                            <a href="/user/delete">
+                                <button type="submit">Eliminar cuenta</button>
+                            </a>
 
                 </div>
 

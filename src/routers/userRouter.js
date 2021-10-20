@@ -14,6 +14,7 @@ const multerDiskStorage = multer.diskStorage({
     filename: (req, file, cb) => {
         console.log(file);
         const nFileName = 'user-' + Date.now() + path.extname(file.originalname);
+        req.body.nFileName = nFileName;
         cb(null, nFileName);
     }
 });
@@ -57,7 +58,7 @@ router.post('/register', fileUpload.single("formFile"), validations, userControl
 
 //Actualizar usuario
 router.get('/edit', userController.update);
-router.put('/update', userController.save);
+router.post('/edit', userController.save);
 
 //Eliminar usuario
 router.delete('/delete', userController.destroy);
