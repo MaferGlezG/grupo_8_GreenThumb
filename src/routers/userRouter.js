@@ -45,7 +45,7 @@ const validations = [
     body('confirmPassword')
         .notEmpty()
         .withMessage('La contraseña debe coincidir')
-        .isLength({min : 8 }),
+        .isLength({ min: 8 }),
 ];
 
 
@@ -56,11 +56,11 @@ router.post('/register', fileUpload.single("formFile"), validations, userControl
 
 
 //Actualizar usuario
-//router.get('/:id/update', userController.update);
-//router.put('/:id/update', userController.save);
+router.get('/edit', userController.update);
+router.put('/update', userController.save);
 
 //Eliminar usuario
-router.delete('/:id/delete', userController.destroy);
+router.delete('/delete', userController.destroy);
 
 
 //Login y Logout

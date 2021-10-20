@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+        <link rel="stylesheet" href="http://localhost:3333/css/register.css">
+        <title>Usuario - GreenThumb</title>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <main>
+            <!-- Formularios -->
+            <div class="forms-container">
+                <!-- Links de los formularios -->
+                <!-- Contenido de los Formularios -->
+                <div class="tab-contain">
+
+                    <!-- Registrarse -->
+                    <div id="signUp">
+                        <h1>Editar usuario</h1>
+                        <form action="/user/register" method="POST" enctype="multipart/form-data">
+                            <div class="top-row">
+                                <div class="input-container">
+                                    <label>
+                                        Nombre <span class="req">*</span>
+                                    </label>
+                                    <input type="text" name="first_name" id="first_name" class="form-control" required
+                                        value="<%= user.first_name%>">
+                                </div>
+                                <div class="input-container">
+                                    <label>
+                                        Apellido <span class="req">*</span>
+                                    </label>
+                                    <input type="text" name="last_name" id="last_name" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <label>
+                                    Nombre de Usuario <span class="req">*</span>
+                                </label>
+                                <input type="text" name="username" id="username" class="form-control" required>
+                            </div>
+                            <div class="input-container">
+                                <label>
+                                    E-mail <span class="req">*</span>
+                                </label>
+                                <input type="email" name="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="input-container">
+                                <select class="form-label" aria-label="Default select example" name="credentials"
+                                    id="credentials">
+                                    <option selected>Selecciona el tipo de cuenta</option>
+                                    <option value="2">¡Quiero vender!</option>
+                                    <option value="3">¡Quiero comprar!</option>
+                                </select>
+                            </div>
+                            <div class="input-container">
+                                <label>
+                                    Contraseña <span class="req">*</span>
+                                </label>
+                                <input type="password" name="password" id="password" minlength="8" class="form-control"
+                                    required>
+                            </div>
+                            <div class="input-container">
+                                <label>
+                                    Confirmar Contraseña <span class="req">*</span>
+                                </label>
+                                <input type="password" name="confirmPassword" class="form-control" required>
+                            </div>
+                    </div>
+                    <div class="input-container">
+                        <label for="formFile" class="form-label">Foto de perfil</label>
+                        <input class="form-control" type="file" name="formFile" id="formFile">
+                    </div>
+                    <div class="input-container">
+                        <input type="submit" class="button button-block" value="Guardar">
+                    </div>
+                    </form>
+                    <% if(typeof validaciones !='undefined' ) { %>
+                        <% validaciones.forEach( (validacion)=> { %>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>
+                                    <%= validacion.msg %>
+                                </strong>
+                                <button type="button" class="button-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            <% }) %>
+                                <% } %>
+                </div>
+            </div>
+        </main>
+        <%- include('../partials/footer') %>
+</body>
+
+</html>

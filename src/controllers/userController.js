@@ -19,16 +19,16 @@ let userController = {
     },
     createUser: (req, res) => {
         const errors = validationResult(req);
-        
-        if(errors.isEmpty()) {
-        console.log(req.body);
-        const values = req.body;
-        const validations = errors.array();
-        res.render('register', { validations: validations, values: values });
-        }else {        
-        res.redirect('/')
+
+        if (errors.isEmpty()) {
+            console.log(req.body);
+            const values = req.body;
+            const validations = errors.array();
+            res.render('register', { validations: validations, values: values });
+        } else {
+            res.redirect('/')
         };
-        
+
 
         const hash = bcrypt.hashSync(req.body.password, 10);
         db.Usuario
@@ -142,6 +142,14 @@ let userController = {
         res.render('users/profile', {
             user: req.session.userLogged
         })
+    },
+    update: (req, res) => {
+        res.render('users/edit', {
+            user: req.session.userLogged
+        })
+    },
+    save: (req, res) => {
+
     },
     logout: (req, res) => {
         req.session.destroy();
