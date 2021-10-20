@@ -8,6 +8,7 @@ USE `green_thumb`;
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `seller_id` int(10) NOT NULL,
   `name` varchar(50) NOT NULL,
   `stock` int(10) NOT NULL,
   `description` text NOT NULL,
@@ -25,7 +26,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES  (1, 'Aloe Vera', '6', 'Planta de Aloe Vera', 'aloe1.png', '65.00', 1, 1,'#1c6334' ), (2, 'Noche Buena', '7','Planta tradicional de navidad en Mexico', 'nochebuena1.jpg', '25.00', 2, 2,'#ab0a0a' ), (3,  'Suculenta Basica', '9', 'Suculenta de poca altura, ideal para principiantes en el cuidado de plantas', 'suculenta1.jpg', '15.50', 3, 3,'#579620' );
+INSERT INTO `products` VALUES  (1, 1, 'Aloe Vera', '6', 'Planta de Aloe Vera', 'aloe1.png', '65.00', 1, 1,'#1c6334' ), (2,2,'Noche Buena', '7','Planta tradicional de navidad en Mexico', 'nochebuena1.jpg', '25.00', 2, 2,'#ab0a0a' ), (3, 2,  'Suculenta Basica', '9', 'Suculenta de poca altura, ideal para principiantes en el cuidado de plantas', 'suculenta1.jpg', '15.50', 3, 3,'#579620' );
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 

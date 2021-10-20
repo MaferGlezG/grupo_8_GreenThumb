@@ -10,9 +10,13 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
 
         },
+        seller_id: {
+            type: DataTypes.INTEGER
+        },
         name: {
             type: DataTypes.STRING
         },
+
         stock: {
             type: DataTypes.INTEGER
         },

@@ -68,7 +68,6 @@ let productController = {
 
 
     store: (req, res) => {
-
         //MÉTODO NUEVO (SQL)   
         db.Producto
             .create(
@@ -86,6 +85,7 @@ let productController = {
                 }
             )
             .then(() => {
+                console.log(req.session.userLogged.id)
                 return res.redirect('/product')
             })
 
@@ -135,6 +135,7 @@ let productController = {
             .update(
                 {
                     name: req.body.name,
+                    seller_id: req.session.userLogged.id,
                     stock: req.body.stock,
                     description: req.body.description,
                     image: req.body.formFile,

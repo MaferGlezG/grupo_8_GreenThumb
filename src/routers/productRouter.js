@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path')
 const productController = require('../controllers/productController');
-
+const db = require('../database/models');
 
 const multerDiskStorage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -12,7 +12,7 @@ const multerDiskStorage = multer.diskStorage({
 
     filename: (req, file, cb) => {
         console.log(file);
-        const nFileName = 'planta-' + Date.now() + path.extname(file.originalname);
+        const nFileName = 'planta-' + dateNow() + path.extname(file.originalname);
         cb(null, nFileName);
     }
 });

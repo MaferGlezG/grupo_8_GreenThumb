@@ -1,0 +1,23 @@
+:root{
+    /*colores usados*/
+    --color-green: #216034;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-yellow: #FFDD47;
+    --color-blue: #156FA2;
+}
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.img{
+    padding: 5%;
+
+}
+
+.buttons{
+padding-right: 20%;
+}
