@@ -92,7 +92,7 @@ CREATE TABLE `users`(
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1, 'Mafer', 'Gonzalez', 'Maferglez', '16012603@udec.edu.mx', 'admin*', 'default.jpg','1'), (2,'Cosme', 'Fulanito', 'CosmeFulanito', 'cf33@gmail.com', 'seller*', 'default.jpg','2'), (3, 'Homer', 'Simpson', 'Donut1', 'donut@hotmail.com', 'user*','default.jpg', '3');
+INSERT INTO `users` VALUES (1, 'Mafer', 'Gonzalez', 'Maferglez', '16012603@udec.edu.mx', 'admin*', 'default.jpg','1'), (2,'Rocío', 'Juárez', 'r0cio', 'rocio.juarez10@hotmail.com', 'seller*', 'default.jpg','2'), (3, 'Homer', 'Simpson', 'Donut1', 'donut@hotmail.com', 'user*','default.jpg', '3');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
