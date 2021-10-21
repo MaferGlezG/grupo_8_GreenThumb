@@ -27,7 +27,7 @@ let productController = {
 
                 db.Producto.findAll()
                     .then(function (data) {
-                        res.render('products/productDetail', { producto: producto, data: data });
+                        res.render('products/productDetail', { producto: producto, data: data, user: req.session.userLogged });
                     })
 
             })
@@ -35,7 +35,9 @@ let productController = {
     },
 
     cart: (req, res) => {
-        res.render('products/productCart');
+        res.render('products/productCart', {
+            user: req.session.userLogged
+        });
     },
     showcase: (req, res) => {
         db.Producto.findAll()
@@ -44,7 +46,7 @@ let productController = {
                     .then(function (categorias) {
                         db.Talla.findAll()
                             .then(function (tallas) {
-                                res.render('products/productShowcase', { categorias: categorias, tallas: tallas, products: products });
+                                res.render('products/productShowcase', { categorias: categorias, tallas: tallas, products: products, user: req.session.userLogged });
                             })
 
                     })
@@ -59,7 +61,7 @@ let productController = {
                 //esto no está funcionando
                 db.Talla.findAll()
                     .then(function (tallas) {
-                        res.render('products/productAdd', { categorias: categorias, tallas: tallas });
+                        res.render('products/productAdd', { categorias: categorias, tallas: tallas, user: req.session.userLogged });
                     })
 
             })
@@ -70,12 +72,14 @@ let productController = {
     store: (req, res) => {
         //MÉTODO NUEVO (SQL) 
         console.log(req)
+        let userId = req.session.userLogged.id;
 
         db.Producto
             .create(
                 {
 
                     name: req.body.name,
+                    seller_id: userId,
                     stock: req.body.stock,
                     description: req.body.description,
                     image: req.body.nFileName,
@@ -125,7 +129,7 @@ let productController = {
         Promise
             .all([promProduct])
             .then(([productToEdit]) => {
-                return res.render(('products/productEdit'), { productToEdit })
+                return res.render('products/productEdit', { productToEdit, user: req.session.userLogged })
             })
             .catch(error => res.send(error))
     },
@@ -133,11 +137,12 @@ let productController = {
     update: (req, res) => {
         //MÉTODO NUEVO (SQL) 
         let productId = req.params.id;
+        let userId = req.session.userLogged.id;
         db.Producto
             .update(
                 {
                     name: req.body.name,
-                    seller_id: req.session.userLogged.id,
+                    seller_id: userId,
                     stock: req.body.stock,
                     description: req.body.description,
                     image: req.body.formFile,
@@ -183,6 +188,25 @@ let productController = {
         };*/
     },
 
+    userShowcase: (req, res) => {
+        let userid = req.session.userLogged.id;
+        db.Producto.findAll({
+            where: {
+                seller_id: userid
+            }
+        })
+            .then(function (products) {
+                db.Producto_Categoria.findAll()
+                    .then(function (categorias) {
+                        db.Talla.findAll()
+                            .then(function (tallas) {
+                                res.render('products/productShowcase', { categorias: categorias, tallas: tallas, products: products, user: req.session.userLogged });
+                            })
+
+                    })
+            })
+
+    }
 
 }
 

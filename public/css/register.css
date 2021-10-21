@@ -79,6 +79,7 @@ main label {
     backface-visibility: hidden;
     pointer-events: none;
     font-size: 22px;
+    opacity: 20%;
 }
     main label .req {
         margin: 2px;

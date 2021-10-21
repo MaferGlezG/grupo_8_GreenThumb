@@ -15,7 +15,9 @@ const session = require('express-session');
 
 let userController = {
     register: (req, res) => {
-        res.render('users/register');
+        res.render('users/register', {
+            user: req.session.userLogged
+        });
     },
     createUser: (req, res) => {
         const errors = validationResult(req);
@@ -24,7 +26,7 @@ let userController = {
             console.log(req.body);
             const values = req.body;
             const validations = errors.array();
-            res.render('register', { validations: validations, values: values });
+            res.render('register', { validations: validations, values: values, });
         } else {
             res.redirect('/')
         };
