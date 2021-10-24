@@ -232,12 +232,17 @@
                     <button><i class="fas fa-search"></i></button>
                 </div>
             </div>
+            <% if (user) { %>
+                <div class="header-desktop-top-profile-links">
+                    <li><a href="/user/profile">Mi perfil</a></li>
+                </div>
+                <% } else {%>
+                    <div class="header-desktop-top-profile-links">
+                        <li><a href="/user/register#signUp">Crear cuenta</a></li>
+                        <li><a href="/user/register#login">Iniciar sesión</a></li>
 
-            <div class="header-desktop-top-profile-links">
-                <li><a href="/user/register#signUp">Crear cuenta</a></li>
-                <li><a href="/user/register#login">Iniciar sesión</a></li>
-                <li class="invisible"><a href="/user/profile">Mi perfil</a></li>
-            </div>
+                    </div>
+                    <%}%>
         </div>
         <div class="header-desktop-fixed-nav" id="navbar1">
 

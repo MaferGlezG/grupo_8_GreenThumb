@@ -21,6 +21,7 @@ const multerDiskStorage = multer.diskStorage({
 
 const fileUpload = multer({ storage: multerDiskStorage });
 const userController = require('../controllers/userController');
+const productController = require('../controllers/productController');
 
 const validations = [
     body('first_name')
@@ -61,7 +62,7 @@ router.get('/edit', userController.update);
 router.post('/edit', userController.save);
 
 //Eliminar usuario
-router.delete('/delete', userController.destroy);
+router.get('/delete', userController.destroy);
 
 
 //Login y Logout
@@ -69,6 +70,7 @@ router.post('/login', userController.login);
 router.get('/logout', userController.logout);
 
 router.get('/profile', authMiddleware, userController.profile);
+router.get('/showcase', productController.userShowcase)
 
 
 module.exports = router;

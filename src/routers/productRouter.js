@@ -46,6 +46,6 @@ router.get('/:id/edit', productController.edit)
 router.put('/:id/update', fileUpload.single("product-image"), productController.update)
 
 //eliminar un producto
-router.delete('/:id/delete', productController.destroy)
+router.get('/:id/delete', productController.destroy)
 
 module.exports = router;

@@ -93,13 +93,33 @@
                             </select>
                         </div>
                     </div>
-                    <div class="carrito-button-holder">
-                        <a href="/product/cart">
-                            <button class="carrito-button">
-                                <h1>Agregar al carrito <i class="fas fa-cart-plus"></i></h1>
-                            </button>
-                        </a>
-                    </div>
+
+                    <% if (producto.seller_id==user.id) { %>
+                        <div class="carrito-button-holder">
+                            <a href="/product/<%=producto.id%>/edit">
+                                <button class="carrito-button">
+                                    <h1>Editar producto </h1>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="carrito-button-holder">
+                            <a href="/product/<%=producto.id%>/delete">
+                                <button class="carrito-button delete" color="red">
+                                    <h1>Eliminar producto </h1>
+                                </button>
+                            </a>
+                        </div>
+                        <% } else { %>
+                            <div class="carrito-button-holder">
+                                <a href="/product/cart">
+                                    <button class="carrito-button">
+                                        <h1>Agregar al carrito <i class="fas fa-cart-plus"></i></h1>
+                                    </button>
+                                </a>
+                            </div>
+                            <% }%>
+
+
                 </div>
 
             </div>
