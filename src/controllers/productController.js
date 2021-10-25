@@ -25,7 +25,9 @@ let productController = {
         })
             .then(function (producto) {
 
-                db.Producto.findAll()
+                db.Producto.findAll({
+                    limit: 4
+                })
                     .then(function (data) {
                         res.render('products/productDetail', { producto: producto, data: data, user: req.session.userLogged });
                     })

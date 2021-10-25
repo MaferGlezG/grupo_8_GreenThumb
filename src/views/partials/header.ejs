@@ -158,11 +158,18 @@
         padding-top: 30px;
         display: flex;
         flex-direction: row;
+        align-items: center;
+
     }
 
     .header-desktop-top-profile-links li {
         flex-grow: 1;
 
+    }
+
+    .header-desktop-top-profile-links img {
+        padding: 5px;
+        border-left: 25px;
     }
 
     .header-desktop-top-profile-links a {
@@ -180,6 +187,11 @@
         position: fixed;
         top: 0;
         width: 100%;
+    }
+
+    .pfp {
+        border-radius: 50%;
+        width: 15%;
     }
 
     @media (min-width: 361px) {}
@@ -234,6 +246,9 @@
             </div>
             <% if (user) { %>
                 <div class="header-desktop-top-profile-links">
+                    <img src="/images/users/profileImages/<%=user.image%>" class="pfp">
+                    <h4>¡Saludos, <%=user.first_name%>!</h4>
+                    <li></li>
                     <li><a href="/user/profile">Mi perfil</a></li>
                 </div>
                 <% } else {%>
