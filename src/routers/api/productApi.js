@@ -5,7 +5,7 @@ const router = express.Router();
 //const upload = multer({ storage });
 
 // Controlador de productos
-const productAPIController = require('../../controllers/api/productAPIController');
+const productsAPIController = require('../../controllers/api/productsAPIController');
 
 const loggedAdminMiddleware = require('../../middlewares/userLoggedMiddleware');
 
@@ -15,8 +15,11 @@ const loggedAdminMiddleware = require('../../middlewares/userLoggedMiddleware');
 
 // listado de todos los productos
 //router.get('/', loggedAdminMiddleware, adminProductController.products);
-router.get('/', productController.products);
-
+router.get('/', productsAPIController.list);
+router.get('/:id', productsAPIController.detail);
+router.get('/create', productsAPIController.create);
+router.get('/update/:id', productsAPIController.update);
+router.get('/delete/:id', productsAPIController.destroy);
 // detalle de un producto
 //router.get('/:id', userloggedMiddleware, productController.detalle);
 //router.get('/:id', userloggedMiddleware, productController.detail);

@@ -4,6 +4,11 @@ const express = require('express');
 const rutasMain = require('./routers/mainRouter');
 const rutasUsuario = require('./routers/userRouter');
 const rutasProducto = require('./routers/productRouter');
+const productAPI = require('./routers/api/productApi');
+const categoriesAPI = require('./routers/api/categoryApi');
+const userAPI = require('./routers/api/userApi');
+
+
 const path = require('path');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
@@ -35,6 +40,11 @@ app.set('view engine', 'ejs');
 app.use('/', rutasMain);
 app.use('/user', rutasUsuario)
 app.use('/product', rutasProducto);
+
+//Aquí creo la colección de mis recursos de movies (APIs)
+app.use('/api/products', productAPI);
+app.use('/api/users', userAPI);
+app.use('/api/categories', categoriesAPI);
 
 
 app.listen(3333, () => {
