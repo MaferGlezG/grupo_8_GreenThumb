@@ -6,6 +6,7 @@ const router = express.Router();
 
 // Controlador de productos
 const productsAPIController = require('../../controllers/api/productsAPIController');
+const productController = require('../../controllers/productController');
 
 const loggedAdminMiddleware = require('../../middlewares/userLoggedMiddleware');
 
@@ -20,6 +21,7 @@ router.get('/:id', productsAPIController.detail);
 router.get('/create', productsAPIController.create);
 router.get('/update/:id', productsAPIController.update);
 router.get('/delete/:id', productsAPIController.destroy);
+router.get('/last', productsAPIController.last)
 // detalle de un producto
 //router.get('/:id', userloggedMiddleware, productController.detalle);
 //router.get('/:id', userloggedMiddleware, productController.detail);

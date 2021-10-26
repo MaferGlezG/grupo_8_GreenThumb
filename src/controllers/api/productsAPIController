@@ -3,6 +3,7 @@ const db = require('../../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const moment = require('moment');
+const productController = require('../productController');
 
 
 //Aqui tienen otra forma de llamar a cada uno de los modelos
@@ -175,6 +176,27 @@ const productsAPIController = {
                         },
                         data: confirm
                     }
+                }
+                res.json(respuesta);
+            })
+            .catch(error => res.send(error))
+    },
+    last: (req, res) => {
+        Products.findAll({
+            order: [
+                ['id', 'DESC']
+            ],
+            limit: 1
+        })
+            .then(product => {
+                console.log(product)
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        total: product.length,
+                        url: 'api/products/last'
+                    },
+                    data: product
                 }
                 res.json(respuesta);
             })

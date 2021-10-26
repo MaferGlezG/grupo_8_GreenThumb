@@ -51,3 +51,17 @@ app.listen(3333, () => {
   console.log('Servidor funcionando');
 });
 
+
+/*var cors = require('cors')
+
+app.use(cors());
+const { createProxyMiddleware } = require('http-proxy-middleware');
+app.use('/api', createProxyMiddleware({
+    target: 'http://localhost:3333/', //original url
+    changeOrigin: true,
+    //secure: false,
+    onProxyRes: function (proxyRes, req, res) {
+       proxyRes.headers['Access-Control-Allow-Origin'] = '*';
+    }
+}));
+app.listen(5000);*/

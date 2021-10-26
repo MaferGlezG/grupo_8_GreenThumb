@@ -2,6 +2,8 @@ const express = require('express');
 const multer = require('multer');
 const router = express.Router();
 const { check } = require('express-validator');
+const corsMiddleware = require('../../middlewares/corsMiddleware');
+const db = require('../../database/models')
 
 // Multer para aceptar la imagen en el formulario de registro
 const storage = multer.diskStorage({
@@ -17,7 +19,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Controlador de productos
-const userAPIController = require('../../controllers/api/userAPIController');
+const userAPIController = require('../../controllers/api/userAPIControler');
 
 const userLoggedMiddleware = require('../../middlewares/userLoggedMiddleware');
 
