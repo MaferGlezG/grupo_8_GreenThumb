@@ -36,20 +36,42 @@ const categoriesAPIController = {
     },
     categoryProducts: (req, res) => {
         db.Producto_Categoria.findByPk(req.params.id, {
-            include: ['products']
+            include: ['categories']
         })
             .then(category => {
                 let respuesta = {
                     meta: {
                         status: 200,
                         total: category.length,
-                        url: '/api/category/:id/products'
+                        url: '/api/category/:id/categories'
                     },
                     data: category
                 }
                 res.json(respuesta);
             });
+    },
+    last: (req, res) => {
+        db.Producto_Categoria.findAll({
+            order: [
+                ['id', 'DESC']
+            ],
+            limit: 1
+        })
+            .then(category => {
+                console.log(category)
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        total: category.length,
+                        url: 'api/categories/last'
+                    },
+                    data: category
+                }
+                res.json(respuesta);
+            })
+            .catch(error => res.send(error))
     }
+
 }
 
 module.exports = categoriesAPIController;

@@ -37,7 +37,7 @@ const usersAPIController = {
     },
     userProducts: (req, res) => {
         db.Usuario.findByPk(req.params.id, {
-            include: ['products']
+            include: ['users']
         })
             .then(user => {
                 let respuesta = {
@@ -154,7 +154,29 @@ const usersAPIController = {
                 res.json(respuesta);
             })
             .catch(error => res.send(error))
+    },
+    last: (req, res) => {
+        Usuarios.findAll({
+            order: [
+                ['id', 'DESC']
+            ],
+            limit: 1
+        })
+            .then(user => {
+                console.log(user)
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        total: user.length,
+                        url: 'api/users/last'
+                    },
+                    data: user
+                }
+                res.json(respuesta);
+            })
+            .catch(error => res.send(error))
     }
+
 
 }
 

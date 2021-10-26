@@ -1,8 +1,9 @@
-import { render } from '@testing-library/react';
-import React, { Component } from 'react';
-import imagenFondo from '../assets/images/bckg.jpg';
+import React, { Component } from "react";
+import Product from './Product';
+
 
 class LastProductInDb extends Component {
+
     constructor() {
         super()
         this.state = {
@@ -11,17 +12,16 @@ class LastProductInDb extends Component {
     }
 
     componentDidMount() {
-        const api = 'http://localhost:3333/api/products/3'
-
+        const api = 'http://localhost:3333/api/products/last'
         fetch(api)
             .then(respuesta => {
                 return respuesta.json()
             })
             .then(Product => {
                 console.log(Product)
-                this.setState({ LastProduct: Product })
+                this.setState({ LastProduct: Product.data })
             })
-            .catch(error => console.error())
+            .catch(error => console.log(error))
     }
 
     render() {
@@ -32,13 +32,9 @@ class LastProductInDb extends Component {
                         <div className="card-header py-3">
                             <h5 className="m-0 font-weight-bold text-gray-800">Last product in Data Base</h5>
                         </div>
-                        <div className="card-body">
-                            <div className="text-center">
-                                <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 40 + 'rem' }} src={imagenFondo} alt=" Pic " />
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?</p>
-                            <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View product detail</a>
-                        </div>
+                        {this.state.LastProduct.map((product) => {
+                            return <Product {...product} key={product.id} />
+                        })}
                     </div>
                 </div>
             </React.Fragment>

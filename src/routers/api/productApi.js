@@ -17,7 +17,7 @@ const loggedAdminMiddleware = require('../../middlewares/userLoggedMiddleware');
 // listado de todos los productos
 //router.get('/', loggedAdminMiddleware, adminProductController.products);
 router.get('/', productsAPIController.list);
-router.get('/:id', productsAPIController.detail);
+router.get('/single/:id', productsAPIController.detail);
 router.get('/create', productsAPIController.create);
 router.get('/update/:id', productsAPIController.update);
 router.get('/delete/:id', productsAPIController.destroy);

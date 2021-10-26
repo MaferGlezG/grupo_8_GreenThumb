@@ -37,9 +37,15 @@ let productController = {
     },
 
     cart: (req, res) => {
-        res.render('products/productCart', {
-            user: req.session.userLogged
-        });
+        db.Producto.findAll({
+            limit: 4
+        })
+            .then(function (prod) {
+                res.render('products/productCart', {
+                    user: req.session.userLogged, product: prod
+                }
+                )
+            });
     },
     showcase: (req, res) => {
         db.Producto.findAll()

@@ -29,11 +29,11 @@ const userLoggedMiddleware = require('../../middlewares/userLoggedMiddleware');
 router.get('/', userAPIController.list);
 
 // detalle de los usuarios
-router.get('/:id', userAPIController.detail);
+router.get('/single/:id', userAPIController.detail);
 router.get('/:id/products', userAPIController.userProducts);
 router.post('/create', userAPIController.create);
 router.put('/update/:id', userAPIController.update);
 router.delete('/delete/:id', userAPIController.destroy);
-
+router.get('/last', userAPIController.last)
 
 module.exports = router;

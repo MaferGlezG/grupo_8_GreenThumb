@@ -21,38 +21,25 @@
                 <h3>Subtotal</h3>
             </div>
             <div class="main-products">
-                <div class="main-products-in-cart-item">
-                    <div class="item-img">
-                        <img src="http://localhost:3333/images/main-productos-planta1.png" alt="planta 1"
-                            class="product-img">
-                        <a href="#" class="item-delete"><i class="fas fa-times"></i></a>
+                <% for (let i=0; i < product.length; i++) { %>
+
+                    <div class="main-products-in-cart-item">
+                        <div class="item-img">
+                            <img src="/images/products/<%=product[i].image%>" alt="planta 1" class="product-img">
+                            <a href="#" class="item-delete"><i class="fas fa-times"></i></a>
+                        </div>
+                        <h3 class="main-article-nombre">
+                            <%=product[i].name%>
+                        </h3>
+                        <p class="main-article-precio">
+                            $<%=product[i].price%>
+                        </p>
+                        <p class="main-article-cantidad">1</p>
+                        <p class="main-article-subtotal">
+                            $<%=product[i].price%>
+                        </p>
                     </div>
-                    <h3 class="main-article-nombre">Planta</h3>
-                    <p class="main-article-precio">$230.000</p>
-                    <p class="main-article-cantidad">3</p>
-                    <p class="main-article-subtotal">$690.00</p>
-                </div>
-                <div class="main-products-in-cart-item">
-                    <div class="item-img">
-                        <img src="http://localhost:3333/images/main-productos-planta2.png" alt="planta 1"
-                            class="product-img">
-                        <a href="#" class="item-delete"><i class="fas fa-times"></i></a>
-                    </div>
-                    <h3 class="main-article-nombre">Planta</h3>
-                    <p class="main-article-precio">$115.000</p>
-                    <p class="main-article-cantidad">2</p>
-                    <p class="main-article-subtotal">$230.00</p>
-                </div>
-                <div class="main-products-in-cart-item">
-                    <div class="item-img">
-                        <img src="http://localhost:3333/images/aloe4.png" alt="planta 1" class="product-img">
-                        <a href="#" class="item-delete"><i class="fas fa-times"></i></a>
-                    </div>
-                    <h3 class="main-article-nombre">Aloe Vera</h3>
-                    <p class="main-article-precio">$120.000</p>
-                    <p class="main-article-cantidad">4</p>
-                    <p class="main-article-subtotal">$480.00</p>
-                </div>
+                    <% } %>
             </div>
             <div class="main-actions">
                 <div class="main-actions-coupon">
@@ -68,11 +55,11 @@
                 <div class="main-actions-buy">
                     <div class="main-actions-buy-total">
                         <h1>Total</h1>
-                        <h1>$1,400.00</h1>
+                        <h1>$106.00</h1>
                     </div>
                     <div class="main-actions-buy-date">
                         <h3>Recíbelo el</h3>
-                        <h3>25/06/2021</h3>
+                        <h3>02/11/2021</h3>
                     </div>
                     <div class="main-actions-buy-button">
                         <div class="carrito-button-holder">

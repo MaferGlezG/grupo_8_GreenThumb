@@ -40,7 +40,7 @@ const productsAPIController = {
                     meta: {
                         status: 200,
                         total: product.length,
-                        url: '/api/product/:id'
+                        url: '/api/product/single/:id'
                     },
                     data: product
                 }

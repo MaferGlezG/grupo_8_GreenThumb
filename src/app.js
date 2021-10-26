@@ -46,10 +46,17 @@ app.use('/api/products', productAPI);
 app.use('/api/users', userAPI);
 app.use('/api/categories', categoriesAPI);
 
+//404
+app.use((req, res, next) => {
+  res.status(404).render('not-found', {
+    user: req.session.userLogged
+  })
+});
 
 app.listen(3333, () => {
   console.log('Servidor funcionando');
 });
+
 
 
 /*var cors = require('cors')
